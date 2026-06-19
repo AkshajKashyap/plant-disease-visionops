@@ -198,6 +198,61 @@ The run writes:
 Metrics and reports come only from the completed run. This compact CNN is a pipeline baseline, not
 the final architecture; no pretrained model or ResNet is used in this milestone.
 
+## Milestone 5: Transfer Learning and Comparison
+
+The original `train_baseline` command remains supported. The generalized command can run the same
+baseline explicitly:
+
+```bash
+python -m plant_disease_visionops.training.train_experiment \
+  --model-name baseline_cnn \
+  --experiment-name baseline_cnn_generalized \
+  --pretrained false \
+  --freeze-backbone false \
+  --raw-data-dir data/raw \
+  --processed-dir data/processed \
+  --out-dir artifacts/models/baseline_cnn_generalized \
+  --reports-dir reports \
+  --figures-dir artifacts/figures \
+  --image-size 128 --batch-size 16 --epochs 3 \
+  --learning-rate 0.001 --num-workers 2 --seed 42
+```
+
+Run ResNet18 transfer learning with ImageNet weights:
+
+```bash
+python -m plant_disease_visionops.training.train_experiment \
+  --model-name resnet18 \
+  --pretrained true \
+  --freeze-backbone false \
+  --raw-data-dir data/raw \
+  --processed-dir data/processed \
+  --out-dir artifacts/models/resnet18_transfer \
+  --reports-dir reports \
+  --figures-dir artifacts/figures \
+  --image-size 128 --batch-size 16 --epochs 3 \
+  --learning-rate 0.0003 --num-workers 2 --seed 42
+```
+
+The experiment name defaults to the final `--out-dir` component, so this run writes
+`reports/resnet18_transfer_results.json` and matching method-specific Markdown and figure files.
+Use `--freeze-backbone true` to train only the replacement classifier. Pretrained weights may
+require a one-time torchvision download; use `--pretrained false` for offline random initialization.
+
+Compare every `reports/*_results.json` file, including the existing Milestone 4 baseline report:
+
+```bash
+python -m plant_disease_visionops.evaluation.compare_experiments \
+  --reports-dir reports \
+  --out-md reports/experiment_comparison.md \
+  --out-json reports/experiment_comparison.json
+```
+
+PlantVillage-style test accuracy can be inflated by clean backgrounds, near-duplicate acquisition
+conditions, and synthetic augmentation. Model selection should therefore be followed by robustness
+evaluation on field images and later drift tests; a higher in-distribution score is not evidence of
+production robustness by itself.
+
 ## Verify
 
 ```bash

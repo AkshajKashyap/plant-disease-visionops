@@ -108,6 +108,94 @@ def write_baseline_results(
     return output_json, output_markdown
 
 
+def render_experiment_results_markdown(results: dict[str, Any]) -> str:
+    """Render a method-specific experiment report with transfer-learning metadata."""
+    weakest_classes = (
+        results.get("weakest_test_classes")
+        or sorted(
+            results["test_metrics"]["per_class"],
+            key=lambda item: (item["f1"], item["class_name"]),
+        )[:10]
+    )
+    lines = [
+        f"# Experiment Results: {_escape_markdown(results['experiment_name'])}",
+        "",
+        "## Experiment Metadata",
+        "",
+        f"- Model: `{results['model_name']}`",
+        f"- Pretrained: {results['pretrained']}",
+        f"- Freeze backbone: {results['freeze_backbone']}",
+        f"- Device: `{results['device']}`",
+        f"- Number of classes: {results['num_classes']}",
+        f"- Best validation epoch: {results['best_validation_epoch']}",
+        f"- Best checkpoint: `{results['checkpoint_path']}`",
+        "",
+        "## Dataset Splits",
+        "",
+        "| Split | Images |",
+        "|---|---:|",
+        f"| Train | {results['split_sizes']['train']} |",
+        f"| Validation | {results['split_sizes']['val']} |",
+        f"| Test | {results['split_sizes']['test']} |",
+        "",
+        "## Hyperparameters",
+        "",
+        "| Parameter | Value |",
+        "|---|---:|",
+        f"| image_size | {results['image_size']} |",
+        f"| batch_size | {results['batch_size']} |",
+        f"| epochs | {results['epochs']} |",
+        f"| learning_rate | {results['learning_rate']} |",
+        f"| num_workers | {results['hyperparameters']['num_workers']} |",
+        f"| seed | {results['hyperparameters']['seed']} |",
+        f"| dropout | {results['hyperparameters']['dropout']} |",
+        "",
+        *_metric_lines("Best Validation Metrics", results["validation_metrics"]),
+        "",
+        *_metric_lines("Test Metrics", results["test_metrics"]),
+        "",
+        "## Weakest Test Classes",
+        "",
+        "The ten classes with the lowest test F1 are shown, or all classes when fewer than ten "
+        "exist.",
+        "",
+        "| Class | Support | Precision | Recall | F1 |",
+        "|---|---:|---:|---:|---:|",
+    ]
+    for class_metrics in weakest_classes:
+        lines.append(
+            f"| {_escape_markdown(class_metrics['class_name'])} | "
+            f"{class_metrics['support']} | {class_metrics['precision']:.6f} | "
+            f"{class_metrics['recall']:.6f} | {class_metrics['f1']:.6f} |"
+        )
+    lines.extend(
+        [
+            "",
+            "This report records one experiment configuration. Metrics are measured from its "
+            "saved best checkpoint and are not cross-experiment estimates.",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_experiment_results(
+    results: dict[str, Any],
+    json_path: Path | str,
+    markdown_path: Path | str,
+) -> tuple[Path, Path]:
+    """Write JSON and Markdown outputs for one named experiment."""
+    output_json = Path(json_path).expanduser()
+    output_markdown = Path(markdown_path).expanduser()
+    output_json.parent.mkdir(parents=True, exist_ok=True)
+    output_markdown.parent.mkdir(parents=True, exist_ok=True)
+    output_json.write_text(
+        json.dumps(results, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
+    output_markdown.write_text(render_experiment_results_markdown(results), encoding="utf-8")
+    return output_json, output_markdown
+
+
 def save_training_curves(history: list[dict[str, Any]], output_path: Path | str) -> Path:
     """Save train/validation loss and score curves without requiring a display server."""
     from matplotlib.backends.backend_agg import FigureCanvasAgg
@@ -155,6 +243,7 @@ def save_confusion_matrix_figure(
     matrix: list[list[int]],
     class_names: list[str],
     output_path: Path | str,
+    title: str = "Baseline CNN Test Confusion Matrix",
 ) -> Path:
     """Save a raw-count confusion matrix with stable class ordering."""
     from matplotlib.backends.backend_agg import FigureCanvasAgg
@@ -171,7 +260,7 @@ def save_confusion_matrix_figure(
     image = axis.imshow(matrix, interpolation="nearest", cmap="Blues")
     figure.colorbar(image, ax=axis, fraction=0.046, pad=0.04)
     axis.set(
-        title="Baseline CNN Test Confusion Matrix",
+        title=title,
         xlabel="Predicted class",
         ylabel="True class",
         xticks=range(len(class_names)),

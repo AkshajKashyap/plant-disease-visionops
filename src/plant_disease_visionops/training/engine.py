@@ -22,6 +22,14 @@ def _batch_tensors(batch: object) -> tuple[Tensor, Tensor]:
     return images, targets
 
 
+def _keep_frozen_batch_norm_in_eval_mode(model: nn.Module) -> None:
+    for module in model.modules():
+        if isinstance(module, nn.modules.batchnorm._BatchNorm) and all(
+            not parameter.requires_grad for parameter in module.parameters()
+        ):
+            module.eval()
+
+
 def train_one_epoch(
     model: nn.Module,
     dataloader: DataLoader,
@@ -31,6 +39,7 @@ def train_one_epoch(
 ) -> dict[str, float | int]:
     """Train for one complete epoch and return sample-weighted loss and accuracy."""
     model.train()
+    _keep_frozen_batch_norm_in_eval_mode(model)
     total_loss = 0.0
     total_correct = 0
     total_samples = 0

@@ -14,10 +14,12 @@ dependencies = [
 
 [project.scripts]
 audit-dataset = "plant_disease_visionops.data.audit_dataset:main"
+compare-experiments = "plant_disease_visionops.evaluation.compare_experiments:main"
 inspect-batch = "plant_disease_visionops.data.inspect_batch:main"
 make-splits = "plant_disease_visionops.data.make_splits:main"
 prepare-raw-layout = "plant_disease_visionops.data.prepare_raw_layout:main"
 train-baseline = "plant_disease_visionops.training.train_baseline:main"
+train-experiment = "plant_disease_visionops.training.train_experiment:main"
 validate-layout = "plant_disease_visionops.data.validate_layout:main"
 
 [project.optional-dependencies]
