@@ -48,7 +48,37 @@ The command writes `reports/data_audit.json` for machine consumption and
 details, size statistics computed from valid images, and a valid-image class imbalance summary.
 No report is generated when the dataset directory is missing or contains no supported images.
 
-### Verify
+## Milestone 2: Dataset Splits
+
+Generate reproducible, class-stratified metadata after auditing the local dataset:
+
+```bash
+python -m plant_disease_visionops.data.make_splits \
+  --data-dir data/raw \
+  --out-dir data/processed \
+  --reports-dir reports \
+  --train-ratio 0.7 \
+  --val-ratio 0.15 \
+  --test-ratio 0.15 \
+  --seed 42
+```
+
+The installed `make-splits` command is equivalent. It writes:
+
+- `data/processed/train.csv`
+- `data/processed/val.csv`
+- `data/processed/test.csv`
+- `data/processed/class_to_index.json`
+- `data/processed/split_summary.json`
+- `reports/split_summary.md`
+
+CSV filepaths are relative to the dataset root. Each class must contain at least three valid images
+because train, validation, and test ratios must all be greater than zero. Invalid images are
+excluded, and the same seed and inputs produce the same split membership.
+
+No images are copied or moved, no dataset is downloaded, and no model is trained by this command.
+
+## Verify
 
 ```bash
 pytest

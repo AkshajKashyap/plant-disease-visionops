@@ -9,6 +9,7 @@ dependencies = [
 
 [project.scripts]
 audit-dataset = "plant_disease_visionops.data.audit_dataset:main"
+make-splits = "plant_disease_visionops.data.make_splits:main"
 
 [project.optional-dependencies]
 dev = [

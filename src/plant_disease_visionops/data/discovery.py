@@ -80,9 +80,12 @@ def discover_images(data_dir: Path | str) -> tuple[DiscoveredImage, ...]:
         DiscoveredImage(path=image_path, class_name=class_dir.name)
         for class_dir in sorted(
             (path for path in root.iterdir() if path.is_dir()),
-            key=lambda path: path.name.casefold(),
+            key=lambda path: (path.name.casefold(), path.name),
         )
-        for image_path in sorted(class_dir.iterdir(), key=lambda path: path.name.casefold())
+        for image_path in sorted(
+            class_dir.iterdir(),
+            key=lambda path: (path.name.casefold(), path.name),
+        )
         if image_path.is_file() and image_path.suffix.lower() in SUPPORTED_IMAGE_EXTENSIONS
     )
     if not images:
