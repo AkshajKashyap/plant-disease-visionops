@@ -1,0 +1,32 @@
+[project]
+name = "plant-disease-visionops"
+version = "0.1.0"
+description = "Computer vision training and monitoring system for plant disease classification."
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "pillow",
+    "tqdm",
+    "fastapi",
+    "uvicorn",
+    "streamlit",
+    "pydantic",
+    "python-multipart",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
