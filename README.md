@@ -162,6 +162,42 @@ python -m plant_disease_visionops.data.inspect_batch \
 The preparation helper organizes candidate files by extension. The audit remains the authority for
 detecting corrupt or unreadable images before split generation.
 
+## Milestone 4: Baseline CNN
+
+Train the compact three-block CNN after audit, split generation, and batch inspection succeed:
+
+```bash
+python -m plant_disease_visionops.training.train_baseline \
+  --raw-data-dir data/raw \
+  --processed-dir data/processed \
+  --out-dir artifacts/models/baseline_cnn \
+  --reports-dir reports \
+  --figures-dir artifacts/figures \
+  --image-size 128 \
+  --batch-size 16 \
+  --epochs 3 \
+  --learning-rate 0.001 \
+  --num-workers 2 \
+  --seed 42
+```
+
+The equivalent Make target is `make train-baseline`. Training automatically selects CUDA or MPS
+when available and otherwise uses CPU; pass `--device cpu` to force CPU execution. The best model
+is selected by validation macro F1, reloaded, and evaluated on the test split.
+
+The run writes:
+
+- `artifacts/models/baseline_cnn/best_model.pt`
+- `artifacts/models/baseline_cnn/last_model.pt`
+- `artifacts/models/baseline_cnn/history.json`
+- `reports/baseline_cnn_results.json`
+- `reports/baseline_cnn_results.md`
+- `artifacts/figures/baseline_cnn_confusion_matrix.png`
+- `artifacts/figures/baseline_cnn_training_curves.png`
+
+Metrics and reports come only from the completed run. This compact CNN is a pipeline baseline, not
+the final architecture; no pretrained model or ResNet is used in this milestone.
+
 ## Verify
 
 ```bash

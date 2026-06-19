@@ -10,6 +10,7 @@ data/processed/
 data/external/
 artifacts/models/
 artifacts/logs/
+artifacts/figures/
 
 *.pt
 *.pth

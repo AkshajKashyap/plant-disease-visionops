@@ -4,7 +4,10 @@ version = "0.1.0"
 description = "Computer vision training and monitoring system for plant disease classification."
 requires-python = ">=3.11"
 dependencies = [
+    "matplotlib>=3.8,<4",
+    "numpy>=1.24",
     "pillow>=10.0",
+    "scikit-learn>=1.4,<2",
     "torch>=2.2,<3",
     "torchvision>=0.17,<1",
 ]
@@ -14,6 +17,7 @@ audit-dataset = "plant_disease_visionops.data.audit_dataset:main"
 inspect-batch = "plant_disease_visionops.data.inspect_batch:main"
 make-splits = "plant_disease_visionops.data.make_splits:main"
 prepare-raw-layout = "plant_disease_visionops.data.prepare_raw_layout:main"
+train-baseline = "plant_disease_visionops.training.train_baseline:main"
 validate-layout = "plant_disease_visionops.data.validate_layout:main"
 
 [project.optional-dependencies]
