@@ -13,6 +13,8 @@ dependencies = [
 audit-dataset = "plant_disease_visionops.data.audit_dataset:main"
 inspect-batch = "plant_disease_visionops.data.inspect_batch:main"
 make-splits = "plant_disease_visionops.data.make_splits:main"
+prepare-raw-layout = "plant_disease_visionops.data.prepare_raw_layout:main"
+validate-layout = "plant_disease_visionops.data.validate_layout:main"
 
 [project.optional-dependencies]
 dev = [

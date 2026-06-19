@@ -106,6 +106,62 @@ For Python callers, use
 `plant_disease_visionops.data.loaders.create_dataloaders`. Training loaders shuffle by default;
 validation and test loaders do not.
 
+## Milestone 3.5: Real Dataset Setup
+
+Datasets are never downloaded automatically. Download or extract a dataset manually beneath
+`data/external/`, which is ignored by Git:
+
+```text
+data/external/plant_village/
+├── train/healthy/*.jpg
+├── train/late_blight/*.jpg
+├── valid/healthy/*.jpg
+└── test/late_blight/*.jpg
+```
+
+If images are nested beneath wrapper folders such as `train`, `valid`, `test`, `color`, or
+`PlantVillage`, prepare a flat raw layout first:
+
+```bash
+python -m plant_disease_visionops.data.prepare_raw_layout \
+  --input-dir data/external/plant_village \
+  --output-dir data/raw \
+  --mode copy
+```
+
+Use `--mode symlink` to avoid duplicating image bytes. Symlinks use absolute source paths, so the
+downloaded dataset must remain in place. The command refuses a non-empty `data/raw` directory;
+`--overwrite` explicitly replaces it. Every destination filename includes a source-path hash, and
+the operation is recorded in `reports/raw_layout_manifest.json`.
+
+If the downloaded dataset already has direct class folders, place or copy them under `data/raw`
+and skip the preparation command. Validate either setup before auditing:
+
+```bash
+python -m plant_disease_visionops.data.validate_layout --data-dir data/raw
+```
+
+The complete manual integration workflow is:
+
+```bash
+# 1. Audit valid and corrupt files.
+python -m plant_disease_visionops.data.audit_dataset \
+  --data-dir data/raw --out-dir reports
+
+# 2. Generate deterministic split metadata.
+python -m plant_disease_visionops.data.make_splits \
+  --data-dir data/raw --out-dir data/processed --reports-dir reports \
+  --train-ratio 0.7 --val-ratio 0.15 --test-ratio 0.15 --seed 42
+
+# 3. Inspect one transformed batch without training.
+python -m plant_disease_visionops.data.inspect_batch \
+  --raw-data-dir data/raw --processed-dir data/processed \
+  --split train --batch-size 8 --image-size 224 --out-dir artifacts/figures
+```
+
+The preparation helper organizes candidate files by extension. The audit remains the authority for
+detecting corrupt or unreadable images before split generation.
+
 ## Verify
 
 ```bash
