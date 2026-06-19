@@ -78,6 +78,34 @@ excluded, and the same seed and inputs produce the same split membership.
 
 No images are copied or moved, no dataset is downloaded, and no model is trained by this command.
 
+## Milestone 3: PyTorch Data Loading
+
+The PyTorch data layer consumes the Milestone 2 CSV files, resolves their relative filepaths under
+`data/raw`, converts every image to RGB, and applies separate training and evaluation transforms.
+Training uses random resized crops and horizontal flips; validation and test transforms are
+deterministic. All splits use ImageNet normalization.
+
+Inspect a transformed training batch without training a model:
+
+```bash
+python -m plant_disease_visionops.data.inspect_batch \
+  --raw-data-dir data/raw \
+  --processed-dir data/processed \
+  --split train \
+  --batch-size 8 \
+  --image-size 224 \
+  --out-dir artifacts/figures
+```
+
+The command prints the batch tensor shape, class indices, and per-class counts. It saves a
+denormalized grid to `artifacts/figures/sample_batch_train.png`. The installed `inspect-batch`
+command is equivalent.
+
+For Python callers, use
+`plant_disease_visionops.data.loaders.create_datasets` or
+`plant_disease_visionops.data.loaders.create_dataloaders`. Training loaders shuffle by default;
+validation and test loaders do not.
+
 ## Verify
 
 ```bash
