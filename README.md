@@ -103,9 +103,12 @@ are excluded from Git.
 plant-disease-visionops/
 ├── src/plant_disease_visionops/
 │   ├── data/          # discovery, audit, layout, splits, datasets, transforms
+│   ├── inference/     # shared single-image prediction and CLI
 │   ├── models/        # baseline CNN and ResNet18 factory
 │   ├── training/      # experiment engine, checkpoints, reporting
 │   └── evaluation/    # metrics, comparison, robustness, failure analysis
+├── api/               # lazy-loading FastAPI upload endpoint
+├── app/               # local Streamlit upload demo
 ├── tests/             # temporary toy-data unit and CLI tests
 ├── reports/           # committed metrics, analyses, model card, documentation
 ├── data/              # local dataset and generated split metadata, Git-ignored
@@ -204,6 +207,50 @@ python -m plant_disease_visionops.evaluation.analyze_failures \
 The checkpoint paths above are outputs of the training commands, not files distributed in this
 repository. The full command sequence, corrupted failure command, and reproducibility caveats are
 in the [reproducibility guide](reports/reproducibility.md).
+
+## Local Inference
+
+Checkpoints are intentionally not committed. Train a model locally or provide a compatible project
+checkpoint containing model metadata and use the matching `data/processed/class_to_index.json`.
+All inference surfaces use the same deterministic evaluation preprocessing and return ranked
+probabilities. They are demonstrations, not agricultural diagnostic services.
+
+Classify one image from the command line:
+
+```bash
+python -m plant_disease_visionops.inference.predict_image \
+  --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
+  --processed-dir data/processed \
+  --image-path data/raw/Apple___healthy/some_image.jpg \
+  --image-size 128 \
+  --top-k 5
+```
+
+Run the local FastAPI service:
+
+```bash
+export PLANT_DISEASE_CHECKPOINT=artifacts/models/resnet18_transfer_3ep/best_model.pt
+export PLANT_DISEASE_PROCESSED_DIR=data/processed
+uvicorn api.main:app --reload
+```
+
+- `GET /health` reports whether a checkpoint is configured and available.
+- `POST /predict` accepts a multipart image upload and optional `top_k` query parameter.
+- Prediction metadata is appended to `artifacts/logs/predictions.jsonl` by default; image bytes are
+  not logged.
+
+The API has no authentication and is intended for local development only. Uploads are limited to
+10 MB.
+
+Run the Streamlit upload demo:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+The checkpoint can be supplied in the Streamlit sidebar or through
+`PLANT_DISEASE_CHECKPOINT`. API settings also support `PLANT_DISEASE_DEVICE`,
+`PLANT_DISEASE_IMAGE_SIZE`, `PLANT_DISEASE_TOP_K`, and `PLANT_DISEASE_LOG_PATH`.
 
 ## Important Limitations
 
