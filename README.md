@@ -1,27 +1,120 @@
 # Plant Disease VisionOps
 
-Production-style computer vision system for plant disease classification with efficient image pipelines, imbalance-aware CNN training, per-class error analysis, FastAPI inference, Streamlit demo, and drift monitoring.
+A production-style computer vision workflow for 38-class plant disease image classification. The
+project goes beyond clean test accuracy: it audits local data, creates reproducible split metadata,
+trains comparable CNN and ResNet18 experiments, measures synthetic corruption robustness, and
+turns individual errors into reviewable reports and image galleries.
 
-## Milestone 1: Dataset Audit
+> **Scope:** This is an engineering and evaluation portfolio, not a medical or agricultural
+> diagnostic tool. It has not been validated on real field images and should not guide treatment.
 
-This milestone discovers and validates a local class-organized image dataset. It does not train a
-model or provide inference services.
+## Key Results
 
-Use this directory layout:
+The reported experiments use 175,734 valid, curated leaf images and a deterministic 70/15/15
+stratified split.
 
-```text
-data/raw/
-├── healthy/
-│   ├── leaf_001.jpg
-│   └── leaf_002.png
-└── late_blight/
-    └── leaf_003.jpeg
+| Experiment | Test accuracy | Test macro F1 |
+|---|---:|---:|
+| Baseline CNN, 3 epochs | 0.9154 | 0.9146 |
+| ResNet18 transfer, 3 epochs | **0.9839** | **0.9838** |
+
+The clean ResNet18 result is strong, but robustness testing changes the conclusion:
+
+| ResNet18 condition | Accuracy | Macro F1 | Macro F1 drop |
+|---|---:|---:|---:|
+| Clean test split | 0.9839 | 0.9838 | 0.0000 |
+| Brightness decrease, severity 3 | 0.3086 | 0.3286 | 0.6553 |
+| Zoom in, severity 3 | 0.3754 | 0.4022 | 0.5816 |
+| Contrast decrease, severity 3 | 0.5021 | 0.4895 | 0.4943 |
+| Gaussian noise, severity 3 | 0.5947 | 0.5632 | 0.4207 |
+| Gaussian blur, severity 3 | 0.6742 | 0.6758 | 0.3081 |
+
+Average macro F1 across all 21 corrupted conditions was **0.8150**. Clean failure analysis found
+425 mistakes among 26,353 test images (1.61%); severe brightness reduction produced 18,220 mistakes
+(69.14%). These gaps, rather than the headline clean score, are the main project finding.
+
+Results are reproduced from the committed JSON reports; evaluation was not rerun to write this
+README. See the [final project summary](reports/final_project_summary.md) for interpretation.
+
+## Failure Galleries
+
+The repository includes compressed copies of the generated visual diagnostics. The original
+full-resolution figures remain local and Git-ignored.
+
+- [Clean test misclassifications](reports/assets/resnet18_transfer_3ep_failures_clean.jpg)
+- [Brightness decrease severity 3 misclassifications](reports/assets/resnet18_transfer_3ep_failures_brightness_decrease_s3.jpg)
+
+On clean data, frequent errors occur between visually related labels such as Tomato Target Spot and
+Tomato Early Blight. Under severe darkening, predictions collapse heavily toward Tomato Late
+Blight, revealing a systematic acquisition sensitivity that aggregate clean metrics conceal.
+
+## Pipeline
+
+```mermaid
+flowchart LR
+    A[Manual dataset download] --> B[Layout preparation]
+    B --> C[Validation and audit]
+    C --> D[Stratified split CSVs]
+    D --> E[PyTorch datasets and transforms]
+    E --> F[Baseline CNN]
+    E --> G[ResNet18 transfer learning]
+    F --> H[Experiment comparison]
+    G --> H
+    H --> I[Corruption robustness]
+    I --> J[Failure analysis and galleries]
 ```
 
-Only `.jpg`, `.jpeg`, and `.png` files directly inside each class directory are scanned. Extension
-matching is case-insensitive. Dataset files under `data/raw/` are ignored by Git.
+### What Is Implemented
 
-### Setup
+- Safe preparation and validation for flat or nested class-folder datasets
+- Corrupt-image detection, image-size statistics, and class-imbalance audit
+- Deterministic class-stratified train/validation/test metadata with leakage checks
+- Typed, CSV-backed PyTorch datasets, train/evaluation transforms, and DataLoader factories
+- Batch visualization without training
+- Compact baseline CNN and ImageNet-pretrained ResNet18 experiment workflows
+- Accuracy, macro F1, per-class metrics, confusion matrices, checkpoints, and history logging
+- Seven deterministic corruptions at three severities
+- Prediction-level confidence, confusion, class-error, and visual failure analysis
+- Fast tests using generated toy images without real data, GPU, or network access
+
+FastAPI, Streamlit, drift monitoring, and production deployment are deliberately outside the current
+scope.
+
+## Dataset Snapshot
+
+| Item | Value |
+|---|---:|
+| Classes | 38 |
+| Valid images | 175,734 |
+| Invalid images | 0 |
+| Train | 123,019 |
+| Validation | 26,362 |
+| Test | 26,353 |
+| Image size | 256 x 256 |
+| Class count ratio, max/min | 1.23 |
+| Filepath overlap across splits | 0 |
+
+Data is never downloaded automatically. `data/`, model checkpoints, and generated full-size figures
+are excluded from Git.
+
+## Repository Structure
+
+```text
+plant-disease-visionops/
+├── src/plant_disease_visionops/
+│   ├── data/          # discovery, audit, layout, splits, datasets, transforms
+│   ├── models/        # baseline CNN and ResNet18 factory
+│   ├── training/      # experiment engine, checkpoints, reporting
+│   └── evaluation/    # metrics, comparison, robustness, failure analysis
+├── tests/             # temporary toy-data unit and CLI tests
+├── reports/           # committed metrics, analyses, model card, documentation
+├── data/              # local dataset and generated split metadata, Git-ignored
+└── artifacts/         # local checkpoints and full-size figures, Git-ignored
+```
+
+## Quickstart
+
+Python 3.11 or newer is required.
 
 ```bash
 python3 -m venv .venv
@@ -29,322 +122,115 @@ source .venv/bin/activate
 python -m pip install -e ".[dev]"
 ```
 
-### Run the audit
-
-```bash
-python -m plant_disease_visionops.data.audit_dataset \
-  --data-dir data/raw \
-  --out-dir reports
-```
-
-The installed `audit-dataset` command is equivalent:
-
-```bash
-audit-dataset --data-dir data/raw --out-dir reports
-```
-
-The command writes `reports/data_audit.json` for machine consumption and
-`reports/data_audit.md` for review. Reports include total and per-class counts, corrupt-image
-details, size statistics computed from valid images, and a valid-image class imbalance summary.
-No report is generated when the dataset directory is missing or contains no supported images.
-
-## Milestone 2: Dataset Splits
-
-Generate reproducible, class-stratified metadata after auditing the local dataset:
-
-```bash
-python -m plant_disease_visionops.data.make_splits \
-  --data-dir data/raw \
-  --out-dir data/processed \
-  --reports-dir reports \
-  --train-ratio 0.7 \
-  --val-ratio 0.15 \
-  --test-ratio 0.15 \
-  --seed 42
-```
-
-The installed `make-splits` command is equivalent. It writes:
-
-- `data/processed/train.csv`
-- `data/processed/val.csv`
-- `data/processed/test.csv`
-- `data/processed/class_to_index.json`
-- `data/processed/split_summary.json`
-- `reports/split_summary.md`
-
-CSV filepaths are relative to the dataset root. Each class must contain at least three valid images
-because train, validation, and test ratios must all be greater than zero. Invalid images are
-excluded, and the same seed and inputs produce the same split membership.
-
-No images are copied or moved, no dataset is downloaded, and no model is trained by this command.
-
-## Milestone 3: PyTorch Data Loading
-
-The PyTorch data layer consumes the Milestone 2 CSV files, resolves their relative filepaths under
-`data/raw`, converts every image to RGB, and applies separate training and evaluation transforms.
-Training uses random resized crops and horizontal flips; validation and test transforms are
-deterministic. All splits use ImageNet normalization.
-
-Inspect a transformed training batch without training a model:
-
-```bash
-python -m plant_disease_visionops.data.inspect_batch \
-  --raw-data-dir data/raw \
-  --processed-dir data/processed \
-  --split train \
-  --batch-size 8 \
-  --image-size 224 \
-  --out-dir artifacts/figures
-```
-
-The command prints the batch tensor shape, class indices, and per-class counts. It saves a
-denormalized grid to `artifacts/figures/sample_batch_train.png`. The installed `inspect-batch`
-command is equivalent.
-
-For Python callers, use
-`plant_disease_visionops.data.loaders.create_datasets` or
-`plant_disease_visionops.data.loaders.create_dataloaders`. Training loaders shuffle by default;
-validation and test loaders do not.
-
-## Milestone 3.5: Real Dataset Setup
-
-Datasets are never downloaded automatically. Download or extract a dataset manually beneath
-`data/external/`, which is ignored by Git:
-
-```text
-data/external/plant_village/
-├── train/healthy/*.jpg
-├── train/late_blight/*.jpg
-├── valid/healthy/*.jpg
-└── test/late_blight/*.jpg
-```
-
-If images are nested beneath wrapper folders such as `train`, `valid`, `test`, `color`, or
-`PlantVillage`, prepare a flat raw layout first:
+Place a manually downloaded dataset under `data/external/`, prepare it if nested, then validate it:
 
 ```bash
 python -m plant_disease_visionops.data.prepare_raw_layout \
   --input-dir data/external/plant_village \
   --output-dir data/raw \
   --mode copy
-```
 
-Use `--mode symlink` to avoid duplicating image bytes. Symlinks use absolute source paths, so the
-downloaded dataset must remain in place. The command refuses a non-empty `data/raw` directory;
-`--overwrite` explicitly replaces it. Every destination filename includes a source-path hash, and
-the operation is recorded in `reports/raw_layout_manifest.json`.
-
-If the downloaded dataset already has direct class folders, place or copy them under `data/raw`
-and skip the preparation command. Validate either setup before auditing:
-
-```bash
 python -m plant_disease_visionops.data.validate_layout --data-dir data/raw
 ```
 
-The complete manual integration workflow is:
+If images are already direct children of `data/raw/<class_name>/`, skip preparation.
+
+Audit and create deterministic splits:
 
 ```bash
-# 1. Audit valid and corrupt files.
 python -m plant_disease_visionops.data.audit_dataset \
   --data-dir data/raw --out-dir reports
 
-# 2. Generate deterministic split metadata.
 python -m plant_disease_visionops.data.make_splits \
   --data-dir data/raw --out-dir data/processed --reports-dir reports \
   --train-ratio 0.7 --val-ratio 0.15 --test-ratio 0.15 --seed 42
 
-# 3. Inspect one transformed batch without training.
 python -m plant_disease_visionops.data.inspect_batch \
   --raw-data-dir data/raw --processed-dir data/processed \
-  --split train --batch-size 8 --image-size 224 --out-dir artifacts/figures
+  --split train --batch-size 8 --image-size 128 \
+  --out-dir artifacts/figures
 ```
 
-The preparation helper organizes candidate files by extension. The audit remains the authority for
-detecting corrupt or unreadable images before split generation.
+## Reproduce Experiments
 
-## Milestone 4: Baseline CNN
-
-Train the compact three-block CNN after audit, split generation, and batch inspection succeed:
+Train the baseline:
 
 ```bash
 python -m plant_disease_visionops.training.train_baseline \
-  --raw-data-dir data/raw \
-  --processed-dir data/processed \
-  --out-dir artifacts/models/baseline_cnn \
-  --reports-dir reports \
-  --figures-dir artifacts/figures \
-  --image-size 128 \
-  --batch-size 16 \
-  --epochs 3 \
-  --learning-rate 0.001 \
-  --num-workers 2 \
-  --seed 42
-```
-
-The equivalent Make target is `make train-baseline`. Training automatically selects CUDA or MPS
-when available and otherwise uses CPU; pass `--device cpu` to force CPU execution. The best model
-is selected by validation macro F1, reloaded, and evaluated on the test split.
-
-The run writes:
-
-- `artifacts/models/baseline_cnn/best_model.pt`
-- `artifacts/models/baseline_cnn/last_model.pt`
-- `artifacts/models/baseline_cnn/history.json`
-- `reports/baseline_cnn_results.json`
-- `reports/baseline_cnn_results.md`
-- `artifacts/figures/baseline_cnn_confusion_matrix.png`
-- `artifacts/figures/baseline_cnn_training_curves.png`
-
-Metrics and reports come only from the completed run. This compact CNN is a pipeline baseline, not
-the final architecture; no pretrained model or ResNet is used in this milestone.
-
-## Milestone 5: Transfer Learning and Comparison
-
-The original `train_baseline` command remains supported. The generalized command can run the same
-baseline explicitly:
-
-```bash
-python -m plant_disease_visionops.training.train_experiment \
-  --model-name baseline_cnn \
-  --experiment-name baseline_cnn_generalized \
-  --pretrained false \
-  --freeze-backbone false \
-  --raw-data-dir data/raw \
-  --processed-dir data/processed \
-  --out-dir artifacts/models/baseline_cnn_generalized \
-  --reports-dir reports \
-  --figures-dir artifacts/figures \
+  --raw-data-dir data/raw --processed-dir data/processed \
+  --out-dir artifacts/models/baseline_cnn_3ep \
+  --reports-dir reports --figures-dir artifacts/figures \
   --image-size 128 --batch-size 16 --epochs 3 \
   --learning-rate 0.001 --num-workers 2 --seed 42
 ```
 
-Run ResNet18 transfer learning with ImageNet weights:
+Train ResNet18 with ImageNet initialization and full fine-tuning:
 
 ```bash
 python -m plant_disease_visionops.training.train_experiment \
-  --model-name resnet18 \
-  --pretrained true \
-  --freeze-backbone false \
-  --raw-data-dir data/raw \
-  --processed-dir data/processed \
-  --out-dir artifacts/models/resnet18_transfer \
-  --reports-dir reports \
-  --figures-dir artifacts/figures \
+  --model-name resnet18 --experiment-name resnet18_transfer_3ep \
+  --pretrained true --freeze-backbone false \
+  --raw-data-dir data/raw --processed-dir data/processed \
+  --out-dir artifacts/models/resnet18_transfer_3ep \
+  --reports-dir reports --figures-dir artifacts/figures \
   --image-size 128 --batch-size 16 --epochs 3 \
   --learning-rate 0.0003 --num-workers 2 --seed 42
 ```
 
-The experiment name defaults to the final `--out-dir` component, so this run writes
-`reports/resnet18_transfer_results.json` and matching method-specific Markdown and figure files.
-Use `--freeze-backbone true` to train only the replacement classifier. Pretrained weights may
-require a one-time torchvision download; use `--pretrained false` for offline random initialization.
-
-Compare every `reports/*_results.json` file, including the existing Milestone 4 baseline report:
+Compare, stress-test, and inspect the saved local checkpoint:
 
 ```bash
 python -m plant_disease_visionops.evaluation.compare_experiments \
   --reports-dir reports \
   --out-md reports/experiment_comparison.md \
   --out-json reports/experiment_comparison.json
-```
 
-PlantVillage-style test accuracy can be inflated by clean backgrounds, near-duplicate acquisition
-conditions, and synthetic augmentation. Model selection should therefore be followed by robustness
-evaluation on field images and later drift tests; a higher in-distribution score is not evidence of
-production robustness by itself.
-
-## Milestone 6: Robustness Evaluation
-
-Evaluate the saved ResNet18 checkpoint on the clean test split and seven deterministic corruptions
-at severity levels 1–3:
-
-```bash
 python -m plant_disease_visionops.evaluation.evaluate_robustness \
   --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
   --experiment-name resnet18_transfer_3ep \
-  --raw-data-dir data/raw \
-  --processed-dir data/processed \
-  --split test \
-  --reports-dir reports \
-  --figures-dir artifacts/figures \
-  --image-size 128 \
-  --batch-size 16 \
-  --num-workers 2 \
-  --seed 42
-```
-
-The full command performs one clean evaluation plus 21 corruption evaluations, so it is materially
-more expensive than a single test pass. For a targeted check, select conditions with
-`--corruptions gaussian_noise gaussian_blur --severities 1 3`.
-
-Evaluate the baseline checkpoint similarly when available:
-
-```bash
-python -m plant_disease_visionops.evaluation.evaluate_robustness \
-  --checkpoint artifacts/models/baseline_cnn_3ep/best_model.pt \
-  --experiment-name baseline_cnn_3ep \
-  --raw-data-dir data/raw --processed-dir data/processed \
-  --split test --reports-dir reports --figures-dir artifacts/figures \
+  --raw-data-dir data/raw --processed-dir data/processed --split test \
+  --reports-dir reports --figures-dir artifacts/figures \
   --image-size 128 --batch-size 16 --num-workers 2 --seed 42
-```
 
-Compare completed robustness reports:
-
-```bash
-python -m plant_disease_visionops.evaluation.compare_robustness \
-  --reports-dir reports \
-  --out-md reports/robustness_comparison.md \
-  --out-json reports/robustness_comparison.json
-```
-
-Each report records clean scores, corruption-specific accuracy and macro F1, absolute-point drops,
-per-class F1, and the five weakest corruption settings. These synthetic shifts do not reproduce all
-field conditions, but they expose sensitivity to lighting, blur, sensor noise, framing, and camera
-rotation that clean-background PlantVillage-style test sets can hide.
-
-## Milestone 7: Failure Analysis
-
-Generate a prediction-level report and a gallery of the highest-confidence mistakes on the clean
-test split:
-
-```bash
-python -m plant_disease_visionops.evaluation.analyze_failures \
-  --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
-  --experiment-name resnet18_transfer_3ep \
-  --raw-data-dir data/raw \
-  --processed-dir data/processed \
-  --split test \
-  --reports-dir reports \
-  --figures-dir artifacts/figures \
-  --image-size 128 \
-  --batch-size 32 \
-  --num-workers 2 \
-  --seed 42 \
-  --max-examples 80
-```
-
-Inspect the worst robustness condition with the identical split and checkpoint:
-
-```bash
 python -m plant_disease_visionops.evaluation.analyze_failures \
   --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
   --experiment-name resnet18_transfer_3ep \
   --raw-data-dir data/raw --processed-dir data/processed --split test \
   --reports-dir reports --figures-dir artifacts/figures \
   --image-size 128 --batch-size 32 --num-workers 2 --seed 42 \
-  --max-examples 80 \
-  --corruption brightness_decrease --severity 3
+  --max-examples 80
 ```
 
-The clean run writes `reports/resnet18_transfer_3ep_failures_clean.json`, a matching Markdown
-report, and `artifacts/figures/resnet18_transfer_3ep_failures_clean.png`. Corrupted runs add the
-corruption and severity to each filename. Counts and error rates cover the complete split;
-`--max-examples` only limits the individual mistake records and gallery panels.
+The checkpoint paths above are outputs of the training commands, not files distributed in this
+repository. The full command sequence, corrupted failure command, and reproducibility caveats are
+in the [reproducibility guide](reports/reproducibility.md).
 
-The report highlights frequent true-to-predicted confusion pairs, error-prone classes,
-low-confidence correct predictions, and high-confidence errors. Treat these as diagnostics rather
-than proof of field behavior: ambiguous labels, clean backgrounds, duplicate acquisition patterns,
-and other dataset artifacts can all shape a gallery.
+## Important Limitations
+
+- The curated leaf dataset has cleaner backgrounds and acquisition conditions than field imagery.
+- Filepath-level split isolation does not rule out augmented or near-duplicate source images across
+  splits.
+- Train and test data come from the same source distribution.
+- Severe darkening reduced macro F1 from 0.9838 to 0.3286.
+- The model has not been validated on independent field images.
+- Softmax probabilities are not calibrated; some errors are highly confident.
+- No abstention, out-of-distribution detection, or human-in-the-loop review exists.
+
+Read the [limitations report](reports/limitations.md) before interpreting the clean result.
+
+## Reports
+
+- [Model card](reports/model_card.md)
+- [Final project summary](reports/final_project_summary.md)
+- [Reproducibility guide](reports/reproducibility.md)
+- [Limitations](reports/limitations.md)
+- [Dataset audit](reports/data_audit.md)
+- [Split summary](reports/split_summary.md)
+- [Experiment comparison](reports/experiment_comparison.md)
+- [ResNet18 results](reports/resnet18_transfer_3ep_results.md)
+- [Robustness evaluation](reports/resnet18_transfer_3ep_robustness.md)
+- [Clean failure analysis](reports/resnet18_transfer_3ep_failures_clean.md)
+- [Severe brightness failure analysis](reports/resnet18_transfer_3ep_failures_brightness_decrease_s3.md)
 
 ## Verify
 
