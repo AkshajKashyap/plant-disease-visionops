@@ -302,6 +302,50 @@ per-class F1, and the five weakest corruption settings. These synthetic shifts d
 field conditions, but they expose sensitivity to lighting, blur, sensor noise, framing, and camera
 rotation that clean-background PlantVillage-style test sets can hide.
 
+## Milestone 7: Failure Analysis
+
+Generate a prediction-level report and a gallery of the highest-confidence mistakes on the clean
+test split:
+
+```bash
+python -m plant_disease_visionops.evaluation.analyze_failures \
+  --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
+  --experiment-name resnet18_transfer_3ep \
+  --raw-data-dir data/raw \
+  --processed-dir data/processed \
+  --split test \
+  --reports-dir reports \
+  --figures-dir artifacts/figures \
+  --image-size 128 \
+  --batch-size 32 \
+  --num-workers 2 \
+  --seed 42 \
+  --max-examples 80
+```
+
+Inspect the worst robustness condition with the identical split and checkpoint:
+
+```bash
+python -m plant_disease_visionops.evaluation.analyze_failures \
+  --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
+  --experiment-name resnet18_transfer_3ep \
+  --raw-data-dir data/raw --processed-dir data/processed --split test \
+  --reports-dir reports --figures-dir artifacts/figures \
+  --image-size 128 --batch-size 32 --num-workers 2 --seed 42 \
+  --max-examples 80 \
+  --corruption brightness_decrease --severity 3
+```
+
+The clean run writes `reports/resnet18_transfer_3ep_failures_clean.json`, a matching Markdown
+report, and `artifacts/figures/resnet18_transfer_3ep_failures_clean.png`. Corrupted runs add the
+corruption and severity to each filename. Counts and error rates cover the complete split;
+`--max-examples` only limits the individual mistake records and gallery panels.
+
+The report highlights frequent true-to-predicted confusion pairs, error-prone classes,
+low-confidence correct predictions, and high-confidence errors. Treat these as diagnostics rather
+than proof of field behavior: ambiguous labels, clean backgrounds, duplicate acquisition patterns,
+and other dataset artifacts can all shape a gallery.
+
 ## Verify
 
 ```bash
