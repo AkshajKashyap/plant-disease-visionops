@@ -1,0 +1,17 @@
+{
+  "experiments": [
+    {
+      "average_corrupted_macro_f1": 0.8149958836696666,
+      "clean_accuracy": 0.9838728038553486,
+      "clean_macro_f1": 0.9838442712881663,
+      "experiment_name": "resnet18_transfer_3ep",
+      "largest_macro_f1_drop": 0.6552854695213277,
+      "source_report": "/home/akshaj/Building/plant-disease-visionops/reports/resnet18_transfer_3ep_robustness.json",
+      "worst_corrupted_accuracy": 0.30861761469282434,
+      "worst_corrupted_macro_f1": 0.32855880176683855,
+      "worst_corruption": "brightness_decrease",
+      "worst_severity": 3
+    }
+  ],
+  "schema_version": 1
+}
