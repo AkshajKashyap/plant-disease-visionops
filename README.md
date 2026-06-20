@@ -253,6 +253,55 @@ conditions, and synthetic augmentation. Model selection should therefore be foll
 evaluation on field images and later drift tests; a higher in-distribution score is not evidence of
 production robustness by itself.
 
+## Milestone 6: Robustness Evaluation
+
+Evaluate the saved ResNet18 checkpoint on the clean test split and seven deterministic corruptions
+at severity levels 1–3:
+
+```bash
+python -m plant_disease_visionops.evaluation.evaluate_robustness \
+  --checkpoint artifacts/models/resnet18_transfer_3ep/best_model.pt \
+  --experiment-name resnet18_transfer_3ep \
+  --raw-data-dir data/raw \
+  --processed-dir data/processed \
+  --split test \
+  --reports-dir reports \
+  --figures-dir artifacts/figures \
+  --image-size 128 \
+  --batch-size 16 \
+  --num-workers 2 \
+  --seed 42
+```
+
+The full command performs one clean evaluation plus 21 corruption evaluations, so it is materially
+more expensive than a single test pass. For a targeted check, select conditions with
+`--corruptions gaussian_noise gaussian_blur --severities 1 3`.
+
+Evaluate the baseline checkpoint similarly when available:
+
+```bash
+python -m plant_disease_visionops.evaluation.evaluate_robustness \
+  --checkpoint artifacts/models/baseline_cnn_3ep/best_model.pt \
+  --experiment-name baseline_cnn_3ep \
+  --raw-data-dir data/raw --processed-dir data/processed \
+  --split test --reports-dir reports --figures-dir artifacts/figures \
+  --image-size 128 --batch-size 16 --num-workers 2 --seed 42
+```
+
+Compare completed robustness reports:
+
+```bash
+python -m plant_disease_visionops.evaluation.compare_robustness \
+  --reports-dir reports \
+  --out-md reports/robustness_comparison.md \
+  --out-json reports/robustness_comparison.json
+```
+
+Each report records clean scores, corruption-specific accuracy and macro F1, absolute-point drops,
+per-class F1, and the five weakest corruption settings. These synthetic shifts do not reproduce all
+field conditions, but they expose sensitivity to lighting, blur, sensor noise, framing, and camera
+rotation that clean-background PlantVillage-style test sets can hide.
+
 ## Verify
 
 ```bash
