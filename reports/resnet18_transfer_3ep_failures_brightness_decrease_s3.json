@@ -1,0 +1,1635 @@
+{
+  "batch_size": 32,
+  "checkpoint_path": "/home/akshaj/Building/plant-disease-visionops/artifacts/models/resnet18_transfer_3ep/best_model.pt",
+  "condition": "brightness_decrease_s3",
+  "corruption": "brightness_decrease",
+  "device": "cuda",
+  "experiment_name": "resnet18_transfer_3ep",
+  "gallery_path": "/home/akshaj/Building/plant-disease-visionops/artifacts/figures/resnet18_transfer_3ep_failures_brightness_decrease_s3.png",
+  "image_size": 128,
+  "max_examples": 80,
+  "misclassified_examples": [
+    {
+      "confidence": 1.0,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/c9a5bad7-c42c-40e5-a8de-0631a5522018___Crnl_L.Mold 6872_180deg__d3bbbe85df3d.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 4.654983065677243e-09,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999998807907104,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 1680_flipLR__2752baeada22.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.6431038691043796e-08,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999998807907104,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2358__60334d35fd78.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 8.47842969164958e-08,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999997615814209,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Blueberry___healthy/ca4ea722-9bf0-4094-bf8b-e15091bab904___RS_HL 0620__d341c8c6a27e.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.741633226526318e-10,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9999997615814209,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/b75fa72e-186c-4d64-a88c-dc037f275415___Crnl_L.Mold 6531_180deg__2df3b3f5cb64.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.0836267822232912e-07,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999996423721313,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2039_flipLR__cd354e606233.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.897751585351216e-07,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999996423721313,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2039_flipLR__fab0ea93f891.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.897751585351216e-07,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999996423721313,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/a3d07302-420d-4b4e-94f2-6694ef9d2088___RS_Erly.B 7652_180deg__748870a101dd.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.5235700579505647e-07,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999995231628418,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a95f0a82-5cad-423a-be56-8205317909e8___Crnl_L.Mold 8677_flipTB__066b084f6e5f.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.558168065685095e-07,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999994039535522,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/462317c2-9028-473b-9dc6-523eb348e47b___Crnl_L.Mold 6875_180deg__26fd1f787d06.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.979063644190319e-07,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999991655349731,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/c4eb96b2-1345-46d0-a796-161042da21df___RS_NLB 0824 copy_180deg__71ec1b247ee2.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": 3,
+      "true_class_probability": 1.0444284725963371e-07,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.9999990463256836,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/13547fc2-2290-4be8-b212-3b96e0435db6___RS_NLB 4247_180deg__ed7f8d4fffdb.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": 3,
+      "true_class_probability": 4.388958245726826e-07,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.999998927116394,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2577__7df2714f96a4.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 9.13190262963326e-07,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999985694885254,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Potato___Late_blight/dd55ba8d-a425-4b06-9996-bbf315d71e6e___RS_LB 2737__5088add51fa9.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.9990481209551945e-09,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9999985694885254,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a080e5aa-e54d-4e00-b09a-b896c712ea83___Crnl_L.Mold 6871__007d7add7162.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.2116678362872335e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999984502792358,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/a67b9ba1-99ff-4826-8f7b-1b89ca61980e___RS_Erly.B 7597_180deg__e410b90837fa.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 4.919383513879438e-07,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999982118606567,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/e330dc16-fdf9-4eee-8b09-88bfb5537180___RS_Erly.B 7601_180deg__56fd4123772b.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.3931145304013626e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999982118606567,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a47a2d12-bac3-43c8-88d3-0f35e6884381___Crnl_L.Mold 8688_180deg__d07c74ffebec.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.5186587916105054e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999980926513672,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/0ae36892-5cb1-476e-8a51-b7fd8183a535___Crnl_L.Mold 6728__da21f9776d34.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 6.413641813196591e-07,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999978542327881,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Bacterial_spot/ffbff5e5-6c0a-4005-9974-1cb6ac61b4c9___UF.GRC_BS_Lab Leaf 1108__43753a7727d5.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.0482133347977651e-06,
+      "true_index": 28,
+      "true_label": "Tomato___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999977350234985,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/462317c2-9028-473b-9dc6-523eb348e47b___Crnl_L.Mold 6875_flipTB__46259be808e6.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.0908967144350754e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.999997615814209,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/61764b09-9bb9-44b3-af94-d3408045b7c3___NREC_B.Spot 1891_180deg__7aff05e42473.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.9200276785147352e-11,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.999997615814209,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/113562f3-fe24-4b28-9ec8-7ca432bded47___RS_Erly.B 9402_180deg__9f8d5674d851.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.0401075744302943e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999974966049194,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/d8f27502-b864-4da3-9dd5-b7eccf2e8cbc___Crnl_L.Mold 6708_180deg__bb143ca54f31.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.8773013152895146e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999973773956299,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/a9237458-1c43-42da-8a5a-a3ed8d76a12b___NREC_B.Spot 9093_flipTB__290d4e2083d6.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.987181599827359e-11,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999973773956299,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/a9237458-1c43-42da-8a5a-a3ed8d76a12b___NREC_B.Spot 9093_flipTB__9d48572268c0.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.987181599827359e-11,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999973773956299,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Squash___Powdery_mildew/3a4c50a2-bf7a-44ae-bf21-9fd19b069789___UMD_Powd.M 9726__475328bda43a.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": 3,
+      "true_class_probability": 2.1149237028339485e-08,
+      "true_index": 25,
+      "true_label": "Squash___Powdery_mildew"
+    },
+    {
+      "confidence": 0.9999967813491821,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/ad302c48-1f27-43d8-b004-4ca61dfa61c1___RS_Erly.B 7566_flipTB__ad1fee7479e3.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.526810582523467e-07,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.999996542930603,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/ec5d1d0a-2909-4c2d-81d5-4bbed298167b___RS_Erly.B 6340_180deg__0214a394e255.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.1081909860877204e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999964237213135,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Potato___Late_blight/66473aff-3438-4a8c-8c05-5fed8a4255ae___RS_LB 4473__213459c7dc61.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 4.3982257835750715e-08,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9999961853027344,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/ad302c48-1f27-43d8-b004-4ca61dfa61c1___RS_Erly.B 7566_180deg__d908c4c73873.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.215758965779969e-07,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999961853027344,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/546f348a-359a-4cff-8cdd-c87ecb1cec95___Crnl_L.Mold 6873_180deg__2545330c2f8b.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.7316322050173767e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999960660934448,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/ec5d1d0a-2909-4c2d-81d5-4bbed298167b___RS_Erly.B 6340__b46ff56d6fb2.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.2616491176231648e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999959468841553,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Septoria_leaf_spot/2e69e7bc-a60d-43b4-84f9-637c90eb71bb___JR_Sept.L.S 8538_180deg__28f8e43d218c.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.8531725487491713e-08,
+      "true_index": 33,
+      "true_label": "Tomato___Septoria_leaf_spot"
+    },
+    {
+      "confidence": 0.9999958276748657,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/a9770664-3c9c-46ed-808d-5aa7a87a5c1b___NREC_B.Spot 9065_180deg__0f1231e28bcc.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.5782507512571726e-10,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999958276748657,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/a9770664-3c9c-46ed-808d-5aa7a87a5c1b___NREC_B.Spot 9065_180deg__15e4629a428a.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.5782507512571726e-10,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999957084655762,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/e40b2cd1-ef48-4cf7-b69a-8aedf75065fd___NREC_B.Spot 9050_flipTB__b3c7d9447f52.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.3593951520007863e-09,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999955892562866,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a0de49f7-e907-4336-87e8-4440ee6df913___Crnl_L.Mold 7034_flipTB__32cd3976aadb.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.647276798801613e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999955892562866,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a0de49f7-e907-4336-87e8-4440ee6df913___Crnl_L.Mold 7034_flipTB__4bc0a81d39a5.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.647276798801613e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.999995231628418,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/591ec786-c9bb-4054-be3a-055f0dbecbd2___RS_Erly.B 7416_180deg__27daba1b36b0.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.633024784401641e-07,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999951124191284,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/c703ee8a-3a32-4b49-9ac2-02138720a47d___Crnl_L.Mold 6614_flipTB__8d2506881b64.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.976236035261536e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999948740005493,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Bacterial_spot/a1f6fda4-d03d-493d-b4f4-14098f1e2c57___UF.GRC_BS_Lab Leaf 1114__c79c20913232.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.2314802663458977e-06,
+      "true_index": 28,
+      "true_label": "Tomato___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999943971633911,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/bccf2fe9-b834-47bf-b0c3-ecdc41c56614___Crnl_L.Mold 6523_180deg__c0cb2b6a6bc9.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.955713964387542e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999943971633911,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/e38c743b-d76a-4986-8992-9a1c4644abdf___Crnl_L.Mold 6511__1ef524350b91.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.7330962691630702e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999940395355225,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/d76eb906-9957-4572-bf7f-60936f30f8f3___Crnl_L.Mold 8640__0d32c5e00e03.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.693515959137585e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999940395355225,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/d76eb906-9957-4572-bf7f-60936f30f8f3___Crnl_L.Mold 8640__f42ac81514ed.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.693515959137585e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999939203262329,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Cherry_(including_sour)___healthy/ca1aebd1-8b31-4727-a4be-e1a8f421f1cf___JR_HL 9893 copy_180deg__ca98407c7b4d.jpg",
+      "predicted_index": 3,
+      "predicted_label": "Apple___healthy",
+      "severity": 3,
+      "true_class_probability": 2.6553848329058383e-06,
+      "true_index": 5,
+      "true_label": "Cherry_(including_sour)___healthy"
+    },
+    {
+      "confidence": 0.9999938011169434,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Potato___Late_blight/66473aff-3438-4a8c-8c05-5fed8a4255ae___RS_LB 4473_180deg__7a371eec4912.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.951024490968848e-07,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9999935626983643,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 1674__203c48ae2bbe.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 4.200316197966458e-06,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999932050704956,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a0de49f7-e907-4336-87e8-4440ee6df913___Crnl_L.Mold 7034__0d661bc19f5b.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.0776888050022535e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999932050704956,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a0de49f7-e907-4336-87e8-4440ee6df913___Crnl_L.Mold 7034__f843968a951f.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.0776888050022535e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999926090240479,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/d6ef8382-fbf0-47f3-aea4-53cf32b04ab1___Crnl_L.Mold 6510__42f7ce91c3e6.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.626566356411786e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999923706054688,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/a0061e48-b26c-4610-933a-b4f4ce341707___RS_GLSp 7333__685537ed41b4.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": 3,
+      "true_class_probability": 2.047132241500549e-08,
+      "true_index": 7,
+      "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    },
+    {
+      "confidence": 0.9999921321868896,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/ab52bc97-6e53-4e96-b54c-c883999143ae___RS_Erly.B 7531_flipTB__1c7ab5042c7b.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 6.458443749579601e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999921321868896,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/ab52bc97-6e53-4e96-b54c-c883999143ae___RS_Erly.B 7531_flipTB__85373a2dd1e5.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 6.458443749579601e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999920129776001,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/cb31d287-ef55-42a7-9ebe-df5796ad7d41___Crnl_L.Mold 9060_180deg__3685dbc8038c.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 7.109120360837551e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999920129776001,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/cb31d287-ef55-42a7-9ebe-df5796ad7d41___Crnl_L.Mold 9060_180deg__cc20ca8565bc.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 7.109120360837551e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999918937683105,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2354_flipLR__5bf4103d9bc6.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 5.442819201562088e-06,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999918937683105,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/d9c04f45-b778-42cf-a96c-bdf559f5be25___Crnl_L.Mold 8833_180deg__f1c1a6c497d8.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 7.929744242574088e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999918937683105,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/db0e6ad7-58db-478e-9b17-37bb603363d1___Crnl_L.Mold 8863_flipTB__8dc0a95fe2cc.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 7.560656740679406e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999912977218628,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Apple___Cedar_apple_rust/a3bfb6c7-1f1e-407a-a2cf-40b316896185___FREC_C.Rust 9819_270deg__14366cac6149.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.2388820514483996e-09,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9999910593032837,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 1746_flipLR__7118bf38e3e9.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 6.41364886178053e-06,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9999910593032837,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Septoria_leaf_spot/2cb00d76-a875-4c94-a383-6e55534d1506___JR_Sept.L.S 8507_180deg__f45d7700347d.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.830671235187765e-07,
+      "true_index": 33,
+      "true_label": "Tomato___Septoria_leaf_spot"
+    },
+    {
+      "confidence": 0.9999905824661255,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/424602ec-36eb-425c-8bd9-73be3e544cf2___NREC_B.Spot 9251__bdf33ebf5166.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 6.116617212725828e-10,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999905824661255,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/b24f8f98-4bfe-4605-85f5-738fc09e58fe___RS_Erly.B 6406_flipTB__1d821c3ae5e3.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 2.3928180326038273e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999899864196777,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/dc4e5770-ed70-4ff3-b61d-a6296faae7e1___RS_Erly.B 7568_flipTB__39ed0461c5a6.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 4.788890706208804e-08,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999897480010986,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Squash___Powdery_mildew/0f8e7885-5829-4231-953f-fa4a271386a9___UMD_Powd.M 0222__b25fcdcaad6b.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": 3,
+      "true_class_probability": 8.718924249251359e-08,
+      "true_index": 25,
+      "true_label": "Squash___Powdery_mildew"
+    },
+    {
+      "confidence": 0.9999896287918091,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/637cbc00-46b3-4c63-aa26-1b496dc1c080___JR_B.Spot 3137_flipTB__b94bc95484ba.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": 3,
+      "true_class_probability": 1.1122549636866097e-07,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999896287918091,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/47368e87-9afe-4943-8929-e5e8a652bf60___Crnl_L.Mold 8950_flipTB__f8f9c097c99a.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 3.45942089552409e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999895095825195,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Pepper,_bell___Bacterial_spot/61764b09-9bb9-44b3-af94-d3408045b7c3___NREC_B.Spot 1891_flipTB__ea5c354bf55f.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.5080822701740715e-10,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9999885559082031,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/9249614a-4e74-49af-81ab-f8d0689fdc50___RS_Erly.B 7610_180deg__a7fe86e1ba92.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.136007449531462e-05,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999884366989136,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/a28eb895-ef7c-49cc-bc0f-5e01498e5ca2___RS_Erly.B 6463_180deg__4c41a3e2c7bc.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 9.0334997366881e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999868869781494,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/92df4dc7-e952-4454-9fed-a7897d16903b___RS_Erly.B 6448_flipTB__678e4f77e8aa.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.4930069482943509e-06,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9999868869781494,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a0e635a0-0935-4192-94cf-7003875a501e___Crnl_L.Mold 8675_180deg__be0666764380.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.0176098840020131e-05,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999867677688599,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a95f0a82-5cad-423a-be56-8205317909e8___Crnl_L.Mold 8677_180deg__e64eba780409.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.1089706276834477e-05,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999864101409912,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/32902cc7-5db6-4148-8b4e-0d04199edd98___Crnl_L.Mold 6766_flipTB__1364bd9463eb.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 9.407112884218805e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999862909317017,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/6e6da01b-c5b7-4050-b502-4d284330b11b___Crnl_L.Mold 6729__cb70cbb5960a.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 8.364409040950704e-06,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999861717224121,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Septoria_leaf_spot/0ef9804e-d695-40e4-8950-08551255fa05___JR_Sept.L.S 8540_flipTB__b4ab8acde57c.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 9.105188780722528e-08,
+      "true_index": 33,
+      "true_label": "Tomato___Septoria_leaf_spot"
+    },
+    {
+      "confidence": 0.9999860525131226,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Leaf_Mold/a961a718-36c3-4050-a5ef-eea64ae152ce___Crnl_L.Mold 9058_180deg__183e22ca625d.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.2998956663068384e-05,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9999856948852539,
+      "correct": false,
+      "corruption": "brightness_decrease",
+      "filepath": "Tomato___Early_blight/73bbd57a-8733-4b2a-a38d-f304ea890c62___RS_Erly.B 9548_180deg__7abbcf402124.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": 3,
+      "true_class_probability": 1.2460798643587623e-05,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    }
+  ],
+  "model_name": "resnet18",
+  "note": "This is a checkpoint-specific diagnostic. Curated backgrounds, acquisition patterns, and label ambiguity can influence the observed failures.",
+  "num_classes": 38,
+  "num_workers": 2,
+  "schema_version": 1,
+  "seed": 42,
+  "severity": 3,
+  "split": "test",
+  "stored_example_count": 80,
+  "summary": {
+    "error_rate": 0.6913823853071757,
+    "highest_confidence_wrong_predictions": [
+      {
+        "confidence": 1.0,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Leaf_Mold/c9a5bad7-c42c-40e5-a8de-0631a5522018___Crnl_L.Mold 6872_180deg__d3bbbe85df3d.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 4.654983065677243e-09,
+        "true_index": 32,
+        "true_label": "Tomato___Leaf_Mold"
+      },
+      {
+        "confidence": 0.9999998807907104,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Corn_(maize)___Common_rust_/RS_Rust 1680_flipLR__2752baeada22.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 2.6431038691043796e-08,
+        "true_index": 8,
+        "true_label": "Corn_(maize)___Common_rust_"
+      },
+      {
+        "confidence": 0.9999998807907104,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2358__60334d35fd78.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 8.47842969164958e-08,
+        "true_index": 8,
+        "true_label": "Corn_(maize)___Common_rust_"
+      },
+      {
+        "confidence": 0.9999997615814209,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Blueberry___healthy/ca4ea722-9bf0-4094-bf8b-e15091bab904___RS_HL 0620__d341c8c6a27e.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 1.741633226526318e-10,
+        "true_index": 4,
+        "true_label": "Blueberry___healthy"
+      },
+      {
+        "confidence": 0.9999997615814209,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Leaf_Mold/b75fa72e-186c-4d64-a88c-dc037f275415___Crnl_L.Mold 6531_180deg__2df3b3f5cb64.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 2.0836267822232912e-07,
+        "true_index": 32,
+        "true_label": "Tomato___Leaf_Mold"
+      },
+      {
+        "confidence": 0.9999996423721313,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2039_flipLR__cd354e606233.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 2.897751585351216e-07,
+        "true_index": 8,
+        "true_label": "Corn_(maize)___Common_rust_"
+      },
+      {
+        "confidence": 0.9999996423721313,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Corn_(maize)___Common_rust_/RS_Rust 2039_flipLR__fab0ea93f891.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 2.897751585351216e-07,
+        "true_index": 8,
+        "true_label": "Corn_(maize)___Common_rust_"
+      },
+      {
+        "confidence": 0.9999996423721313,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Early_blight/a3d07302-420d-4b4e-94f2-6694ef9d2088___RS_Erly.B 7652_180deg__748870a101dd.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 3.5235700579505647e-07,
+        "true_index": 29,
+        "true_label": "Tomato___Early_blight"
+      },
+      {
+        "confidence": 0.9999995231628418,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Leaf_Mold/a95f0a82-5cad-423a-be56-8205317909e8___Crnl_L.Mold 8677_flipTB__066b084f6e5f.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 1.558168065685095e-07,
+        "true_index": 32,
+        "true_label": "Tomato___Leaf_Mold"
+      },
+      {
+        "confidence": 0.9999994039535522,
+        "correct": false,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Leaf_Mold/462317c2-9028-473b-9dc6-523eb348e47b___Crnl_L.Mold 6875_180deg__26fd1f787d06.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": 3,
+        "true_class_probability": 5.979063644190319e-07,
+        "true_index": 32,
+        "true_label": "Tomato___Leaf_Mold"
+      }
+    ],
+    "lowest_confidence_correct_predictions": [
+      {
+        "confidence": 0.15918263792991638,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Apple___Black_rot/deffd3c8-a9c7-4082-ba2a-4a54aad8ab17___JR_FrgE.S 2789_270deg__c58e24c1af92.jpg",
+        "predicted_index": 1,
+        "predicted_label": "Apple___Black_rot",
+        "severity": 3,
+        "true_class_probability": 0.15918263792991638,
+        "true_index": 1,
+        "true_label": "Apple___Black_rot"
+      },
+      {
+        "confidence": 0.1983131468296051,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Pepper,_bell___healthy/f2eeb551-94e8-4ac2-a5de-4702e6349f42___JR_HL 8761__cfa294d88b90.jpg",
+        "predicted_index": 19,
+        "predicted_label": "Pepper,_bell___healthy",
+        "severity": 3,
+        "true_class_probability": 0.1983131468296051,
+        "true_index": 19,
+        "true_label": "Pepper,_bell___healthy"
+      },
+      {
+        "confidence": 0.20597024261951447,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Pepper,_bell___healthy/53572873-8205-48a9-81c0-6a60022c76ce___JR_HL 8550__f0219c116c26.jpg",
+        "predicted_index": 19,
+        "predicted_label": "Pepper,_bell___healthy",
+        "severity": 3,
+        "true_class_probability": 0.20597024261951447,
+        "true_index": 19,
+        "true_label": "Pepper,_bell___healthy"
+      },
+      {
+        "confidence": 0.21216146647930145,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Pepper,_bell___healthy/5d8fc784-788a-4a21-94e3-a96623a400fc___JR_HL 7915_newPixel25__4f4f37d9fd32.jpg",
+        "predicted_index": 19,
+        "predicted_label": "Pepper,_bell___healthy",
+        "severity": 3,
+        "true_class_probability": 0.21216146647930145,
+        "true_index": 19,
+        "true_label": "Pepper,_bell___healthy"
+      },
+      {
+        "confidence": 0.23401081562042236,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___healthy/2e875abf-377c-4663-a406-e02984215fa6___RS_HL 0499_180deg__ea48d2d1358d.jpg",
+        "predicted_index": 30,
+        "predicted_label": "Tomato___healthy",
+        "severity": 3,
+        "true_class_probability": 0.23401081562042236,
+        "true_index": 30,
+        "true_label": "Tomato___healthy"
+      },
+      {
+        "confidence": 0.24322496354579926,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Target_Spot/aaad08ef-d75b-434a-83e2-d8b1cc519636___Com.G_TgS_FL 1109__7445036c9b69.jpg",
+        "predicted_index": 35,
+        "predicted_label": "Tomato___Target_Spot",
+        "severity": 3,
+        "true_class_probability": 0.24322496354579926,
+        "true_index": 35,
+        "true_label": "Tomato___Target_Spot"
+      },
+      {
+        "confidence": 0.25561195611953735,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___healthy/f04f1e27-b6b0-43a6-b5c5-a4ec6d75ed3e___RS_HL 9737__b602a77994ae.jpg",
+        "predicted_index": 30,
+        "predicted_label": "Tomato___healthy",
+        "severity": 3,
+        "true_class_probability": 0.25561195611953735,
+        "true_index": 30,
+        "true_label": "Tomato___healthy"
+      },
+      {
+        "confidence": 0.2579144239425659,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___Target_Spot/c3f85772-c7c1-41f5-9fa1-3dacf50c96da___Com.G_TgS_FL 0754__a6025e68e29f.jpg",
+        "predicted_index": 35,
+        "predicted_label": "Tomato___Target_Spot",
+        "severity": 3,
+        "true_class_probability": 0.2579144239425659,
+        "true_index": 35,
+        "true_label": "Tomato___Target_Spot"
+      },
+      {
+        "confidence": 0.2591078579425812,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)/d5d5532f-7fbd-4e8c-9d72-66e3a46abf69___FAM_L.Blight 1662_flipLR__953cc681039a.jpg",
+        "predicted_index": 14,
+        "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "severity": 3,
+        "true_class_probability": 0.2591078579425812,
+        "true_index": 14,
+        "true_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"
+      },
+      {
+        "confidence": 0.26708728075027466,
+        "correct": true,
+        "corruption": "brightness_decrease",
+        "filepath": "Tomato___healthy/162db449-3361-40fa-a9bf-42bb63d43781___RS_HL 9647__40eb236f1f9a.jpg",
+        "predicted_index": 30,
+        "predicted_label": "Tomato___healthy",
+        "severity": 3,
+        "true_class_probability": 0.26708728075027466,
+        "true_index": 30,
+        "true_label": "Tomato___healthy"
+      }
+    ],
+    "most_common_confusions": [
+      {
+        "mistake_count": 655,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Leaf_Mold"
+      },
+      {
+        "mistake_count": 620,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Early_blight"
+      },
+      {
+        "mistake_count": 591,
+        "predicted_label": "Apple___healthy",
+        "true_label": "Cherry_(including_sour)___healthy"
+      },
+      {
+        "mistake_count": 543,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Tomato_mosaic_virus"
+      },
+      {
+        "mistake_count": 498,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Bacterial_spot"
+      },
+      {
+        "mistake_count": 494,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Spider_mites Two-spotted_spider_mite"
+      },
+      {
+        "mistake_count": 487,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Target_Spot"
+      },
+      {
+        "mistake_count": 482,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Septoria_leaf_spot"
+      },
+      {
+        "mistake_count": 482,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Tomato___Tomato_Yellow_Leaf_Curl_Virus"
+      },
+      {
+        "mistake_count": 480,
+        "predicted_label": "Tomato___Late_blight",
+        "true_label": "Pepper,_bell___Bacterial_spot"
+      }
+    ],
+    "per_class_error_rates": [
+      {
+        "class_index": 5,
+        "class_name": "Cherry_(including_sour)___healthy",
+        "error_rate": 1.0,
+        "mistakes": 684,
+        "total": 684
+      },
+      {
+        "class_index": 20,
+        "class_name": "Potato___Early_blight",
+        "error_rate": 0.9889958734525447,
+        "mistakes": 719,
+        "total": 727
+      },
+      {
+        "class_index": 27,
+        "class_name": "Strawberry___Leaf_scorch",
+        "error_rate": 0.9864661654135338,
+        "mistakes": 656,
+        "total": 665
+      },
+      {
+        "class_index": 24,
+        "class_name": "Soybean___healthy",
+        "error_rate": 0.9736147757255936,
+        "mistakes": 738,
+        "total": 758
+      },
+      {
+        "class_index": 33,
+        "class_name": "Tomato___Septoria_leaf_spot",
+        "error_rate": 0.9724770642201835,
+        "mistakes": 636,
+        "total": 654
+      },
+      {
+        "class_index": 18,
+        "class_name": "Pepper,_bell___Bacterial_spot",
+        "error_rate": 0.9721059972105998,
+        "mistakes": 697,
+        "total": 717
+      },
+      {
+        "class_index": 36,
+        "class_name": "Tomato___Tomato_mosaic_virus",
+        "error_rate": 0.9716840536512668,
+        "mistakes": 652,
+        "total": 671
+      },
+      {
+        "class_index": 32,
+        "class_name": "Tomato___Leaf_Mold",
+        "error_rate": 0.9673758865248226,
+        "mistakes": 682,
+        "total": 705
+      },
+      {
+        "class_index": 1,
+        "class_name": "Apple___Black_rot",
+        "error_rate": 0.9583892617449664,
+        "mistakes": 714,
+        "total": 745
+      },
+      {
+        "class_index": 35,
+        "class_name": "Tomato___Target_Spot",
+        "error_rate": 0.9430656934306569,
+        "mistakes": 646,
+        "total": 685
+      },
+      {
+        "class_index": 25,
+        "class_name": "Squash___Powdery_mildew",
+        "error_rate": 0.9416282642089093,
+        "mistakes": 613,
+        "total": 651
+      },
+      {
+        "class_index": 7,
+        "class_name": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+        "error_rate": 0.9219512195121952,
+        "mistakes": 567,
+        "total": 615
+      },
+      {
+        "class_index": 19,
+        "class_name": "Pepper,_bell___healthy",
+        "error_rate": 0.8939597315436242,
+        "mistakes": 666,
+        "total": 745
+      },
+      {
+        "class_index": 4,
+        "class_name": "Blueberry___healthy",
+        "error_rate": 0.882525697503671,
+        "mistakes": 601,
+        "total": 681
+      },
+      {
+        "class_index": 29,
+        "class_name": "Tomato___Early_blight",
+        "error_rate": 0.8708333333333333,
+        "mistakes": 627,
+        "total": 720
+      },
+      {
+        "class_index": 28,
+        "class_name": "Tomato___Bacterial_spot",
+        "error_rate": 0.8683385579937304,
+        "mistakes": 554,
+        "total": 638
+      },
+      {
+        "class_index": 2,
+        "class_name": "Apple___Cedar_apple_rust",
+        "error_rate": 0.7893939393939394,
+        "mistakes": 521,
+        "total": 660
+      },
+      {
+        "class_index": 13,
+        "class_name": "Grape___healthy",
+        "error_rate": 0.7728706624605678,
+        "mistakes": 490,
+        "total": 634
+      },
+      {
+        "class_index": 34,
+        "class_name": "Tomato___Spider_mites Two-spotted_spider_mite",
+        "error_rate": 0.7718223583460949,
+        "mistakes": 504,
+        "total": 653
+      },
+      {
+        "class_index": 26,
+        "class_name": "Strawberry___healthy",
+        "error_rate": 0.7383040935672515,
+        "mistakes": 505,
+        "total": 684
+      },
+      {
+        "class_index": 37,
+        "class_name": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+        "error_rate": 0.7129251700680272,
+        "mistakes": 524,
+        "total": 735
+      },
+      {
+        "class_index": 22,
+        "class_name": "Potato___Late_blight",
+        "error_rate": 0.7111416781292985,
+        "mistakes": 517,
+        "total": 727
+      },
+      {
+        "class_index": 15,
+        "class_name": "Orange___Haunglongbing_(Citrus_greening)",
+        "error_rate": 0.7029177718832891,
+        "mistakes": 530,
+        "total": 754
+      },
+      {
+        "class_index": 0,
+        "class_name": "Apple___Apple_scab",
+        "error_rate": 0.6494708994708994,
+        "mistakes": 491,
+        "total": 756
+      },
+      {
+        "class_index": 10,
+        "class_name": "Corn_(maize)___Northern_Leaf_Blight",
+        "error_rate": 0.5846153846153846,
+        "mistakes": 418,
+        "total": 715
+      },
+      {
+        "class_index": 6,
+        "class_name": "Cherry_(including_sour)___Powdery_mildew",
+        "error_rate": 0.5578446909667195,
+        "mistakes": 352,
+        "total": 631
+      },
+      {
+        "class_index": 30,
+        "class_name": "Tomato___healthy",
+        "error_rate": 0.538781163434903,
+        "mistakes": 389,
+        "total": 722
+      },
+      {
+        "class_index": 16,
+        "class_name": "Peach___Bacterial_spot",
+        "error_rate": 0.5224963715529753,
+        "mistakes": 360,
+        "total": 689
+      },
+      {
+        "class_index": 11,
+        "class_name": "Grape___Black_rot",
+        "error_rate": 0.481638418079096,
+        "mistakes": 341,
+        "total": 708
+      },
+      {
+        "class_index": 3,
+        "class_name": "Apple___healthy",
+        "error_rate": 0.4594953519256308,
+        "mistakes": 346,
+        "total": 753
+      },
+      {
+        "class_index": 8,
+        "class_name": "Corn_(maize)___Common_rust_",
+        "error_rate": 0.427972027972028,
+        "mistakes": 306,
+        "total": 715
+      },
+      {
+        "class_index": 17,
+        "class_name": "Peach___healthy",
+        "error_rate": 0.4182098765432099,
+        "mistakes": 271,
+        "total": 648
+      },
+      {
+        "class_index": 14,
+        "class_name": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "error_rate": 0.4077519379844961,
+        "mistakes": 263,
+        "total": 645
+      },
+      {
+        "class_index": 12,
+        "class_name": "Grape___Esca_(Black_Measles)",
+        "error_rate": 0.4027777777777778,
+        "mistakes": 290,
+        "total": 720
+      },
+      {
+        "class_index": 23,
+        "class_name": "Raspberry___healthy",
+        "error_rate": 0.38922155688622756,
+        "mistakes": 260,
+        "total": 668
+      },
+      {
+        "class_index": 21,
+        "class_name": "Potato___healthy",
+        "error_rate": 0.11257309941520467,
+        "mistakes": 77,
+        "total": 684
+      },
+      {
+        "class_index": 31,
+        "class_name": "Tomato___Late_blight",
+        "error_rate": 0.018731988472622477,
+        "mistakes": 13,
+        "total": 694
+      },
+      {
+        "class_index": 9,
+        "class_name": "Corn_(maize)___healthy",
+        "error_rate": 0.0,
+        "mistakes": 0,
+        "total": 697
+      }
+    ],
+    "top_predicted_labels_in_mistakes": [
+      {
+        "mistake_count": 11027,
+        "predicted_label": "Tomato___Late_blight"
+      },
+      {
+        "mistake_count": 1929,
+        "predicted_label": "Corn_(maize)___healthy"
+      },
+      {
+        "mistake_count": 1867,
+        "predicted_label": "Apple___healthy"
+      },
+      {
+        "mistake_count": 904,
+        "predicted_label": "Apple___Apple_scab"
+      },
+      {
+        "mistake_count": 833,
+        "predicted_label": "Tomato___Early_blight"
+      },
+      {
+        "mistake_count": 546,
+        "predicted_label": "Peach___healthy"
+      },
+      {
+        "mistake_count": 225,
+        "predicted_label": "Tomato___Bacterial_spot"
+      },
+      {
+        "mistake_count": 184,
+        "predicted_label": "Potato___Late_blight"
+      },
+      {
+        "mistake_count": 146,
+        "predicted_label": "Potato___healthy"
+      },
+      {
+        "mistake_count": 83,
+        "predicted_label": "Corn_(maize)___Northern_Leaf_Blight"
+      }
+    ],
+    "top_true_labels_by_mistake_count": [
+      {
+        "mistake_count": 738,
+        "true_label": "Soybean___healthy"
+      },
+      {
+        "mistake_count": 719,
+        "true_label": "Potato___Early_blight"
+      },
+      {
+        "mistake_count": 714,
+        "true_label": "Apple___Black_rot"
+      },
+      {
+        "mistake_count": 697,
+        "true_label": "Pepper,_bell___Bacterial_spot"
+      },
+      {
+        "mistake_count": 684,
+        "true_label": "Cherry_(including_sour)___healthy"
+      },
+      {
+        "mistake_count": 682,
+        "true_label": "Tomato___Leaf_Mold"
+      },
+      {
+        "mistake_count": 666,
+        "true_label": "Pepper,_bell___healthy"
+      },
+      {
+        "mistake_count": 656,
+        "true_label": "Strawberry___Leaf_scorch"
+      },
+      {
+        "mistake_count": 652,
+        "true_label": "Tomato___Tomato_mosaic_virus"
+      },
+      {
+        "mistake_count": 646,
+        "true_label": "Tomato___Target_Spot"
+      }
+    ],
+    "total_images": 26353,
+    "total_mistakes": 18220
+  }
+}

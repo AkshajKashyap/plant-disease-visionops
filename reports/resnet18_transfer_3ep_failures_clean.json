@@ -1,0 +1,1635 @@
+{
+  "batch_size": 32,
+  "checkpoint_path": "/home/akshaj/Building/plant-disease-visionops/artifacts/models/resnet18_transfer_3ep/best_model.pt",
+  "condition": "clean",
+  "corruption": null,
+  "device": "cuda",
+  "experiment_name": "resnet18_transfer_3ep",
+  "gallery_path": "/home/akshaj/Building/plant-disease-visionops/artifacts/figures/resnet18_transfer_3ep_failures_clean.png",
+  "image_size": 128,
+  "max_examples": 80,
+  "misclassified_examples": [
+    {
+      "confidence": 0.999994158744812,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/ca4ea722-9bf0-4094-bf8b-e15091bab904___RS_HL 0620__d341c8c6a27e.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": null,
+      "true_class_probability": 4.326826399392303e-07,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9999898672103882,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963_90deg__04216762845a.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 1.0144037332793232e-05,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9999898672103882,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963_90deg__859d01f5c3a2.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 1.0144037332793232e-05,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9999746084213257,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/6fa42fea-4fcd-4cfe-bfbd-c03ee2d7bb3f___FREC_C.Rust 0163_new30degFlipTB__a75fce312dff.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 2.540685272833798e-05,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9996883869171143,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Early_blight/0f111718-a749-42cf-9495-412f4b51acf0___RS_Erly.B 7482__62d64dc01526.jpg",
+      "predicted_index": 28,
+      "predicted_label": "Tomato___Bacterial_spot",
+      "severity": null,
+      "true_class_probability": 4.5035038056084886e-05,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9992355108261108,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Potato___Late_blight/e9cc84b7-fc38-4e65-a129-c7a63df76780___RS_LB 2705__901e6edc6098.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.0007644150173291564,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9991129040718079,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Strawberry___healthy/2fbe071f-efd0-4a93-97b5-38160dafa0c5___RS_HL 2146_90deg__190c9bd419aa.jpg",
+      "predicted_index": 23,
+      "predicted_label": "Raspberry___healthy",
+      "severity": null,
+      "true_class_probability": 0.0008869453449733555,
+      "true_index": 26,
+      "true_label": "Strawberry___healthy"
+    },
+    {
+      "confidence": 0.9991090893745422,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Orange___Haunglongbing_(Citrus_greening)/26454175-626b-436b-b59c-396872381437___UF.Citrus_HLB_Lab 0691__17a165d3d516.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0006492735701613128,
+      "true_index": 15,
+      "true_label": "Orange___Haunglongbing_(Citrus_greening)"
+    },
+    {
+      "confidence": 0.998895525932312,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/c4eb96b2-1345-46d0-a796-161042da21df___RS_NLB 0824 copy_180deg__71ec1b247ee2.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0009226619731634855,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.9985255599021912,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Grape___Black_rot/a5b36885-7c84-4913-a69e-d0e881f18f8b___FAM_B.Rot 0621_flipLR__4ddcf63adaee.jpg",
+      "predicted_index": 14,
+      "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "severity": null,
+      "true_class_probability": 0.0014725428773090243,
+      "true_index": 11,
+      "true_label": "Grape___Black_rot"
+    },
+    {
+      "confidence": 0.9978951215744019,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/6fa42fea-4fcd-4cfe-bfbd-c03ee2d7bb3f___FREC_C.Rust 0163_270deg__a6d7bbd25b7f.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.0021000164560973644,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9976946711540222,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/5b6fe4ff-01b0-4b9d-ad8d-4c6c8ef909be___RS_GLSp 9302__8cd8a060c2eb.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0008329843985848129,
+      "true_index": 7,
+      "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    },
+    {
+      "confidence": 0.9976946711540222,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/5b6fe4ff-01b0-4b9d-ad8d-4c6c8ef909be___RS_GLSp 9302__986fe9370b15.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0008329843985848129,
+      "true_index": 7,
+      "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    },
+    {
+      "confidence": 0.9970263838768005,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 1957__9a7e377a2db6.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0026737081352621317,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9956626296043396,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/8bfe3fc0-c082-49e0-98b0-ff84aee8595e___RS_NLB 3842__f129993b5e73.jpg",
+      "predicted_index": 7,
+      "predicted_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "severity": null,
+      "true_class_probability": 0.003548878012225032,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.995590090751648,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/6fa42fea-4fcd-4cfe-bfbd-c03ee2d7bb3f___FREC_C.Rust 0163_90deg__e4d1464d8615.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.004409315064549446,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9954659938812256,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Potato___Late_blight/ea06da1e-81c9-4e2e-8266-1f3d56914ff3___RS_LB 2701_flipTB__4fcedb376fbf.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.004524954594671726,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9944543242454529,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/34ae03ee-4314-47b1-a568-f3537bc2afba___RS_NLB 3672__61725ee580dd.jpg",
+      "predicted_index": 7,
+      "predicted_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "severity": null,
+      "true_class_probability": 0.003987443633377552,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.9940512776374817,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/0ebdd4cc-322e-4c04-b5cf-8e1125e35660___RS_HL 5474_newPixel25__29d55c88d92c.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.0024808004964143038,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9939345717430115,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/1dce9d73-e579-48f5-bdd9-2a998ab41529___RS_HL 5415_newPixel25__04f11b146f73.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.004333931021392345,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9936549663543701,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Potato___Late_blight/dd55ba8d-a425-4b06-9996-bbf315d71e6e___RS_LB 2737__5088add51fa9.jpg",
+      "predicted_index": 31,
+      "predicted_label": "Tomato___Late_blight",
+      "severity": null,
+      "true_class_probability": 0.002753028180450201,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9931924939155579,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Cherry_(including_sour)___healthy/088b245d-2b68-4d2b-b7fe-0e9fc42131d3___JR_HL 4132__6816e5abc688.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.00012984394561499357,
+      "true_index": 5,
+      "true_label": "Cherry_(including_sour)___healthy"
+    },
+    {
+      "confidence": 0.993047297000885,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Grape___Black_rot/613cac81-8048-40f7-892f-bb2e496cd7ea___FAM_B.Rot 0620_flipLR__4f98d2219c67.jpg",
+      "predicted_index": 14,
+      "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "severity": null,
+      "true_class_probability": 0.00505154998973012,
+      "true_index": 11,
+      "true_label": "Grape___Black_rot"
+    },
+    {
+      "confidence": 0.9923079013824463,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Black_rot/01e94c43-0879-4e8c-9b61-c48cfed88dab___JR_FrgE.S 3024_new30degFlipLR__4ef6fa10bfbb.jpg",
+      "predicted_index": 26,
+      "predicted_label": "Strawberry___healthy",
+      "severity": null,
+      "true_class_probability": 0.007544541731476784,
+      "true_index": 1,
+      "true_label": "Apple___Black_rot"
+    },
+    {
+      "confidence": 0.9922693967819214,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Common_rust_/RS_Rust 1957_flipLR__d9f95008533c.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0061622364446520805,
+      "true_index": 8,
+      "true_label": "Corn_(maize)___Common_rust_"
+    },
+    {
+      "confidence": 0.9920313358306885,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Early_blight/08fe6531-bb66-4e0a-98b3-4b86a794f9f9___RS_Erly.B 7483__85627d598042.jpg",
+      "predicted_index": 28,
+      "predicted_label": "Tomato___Bacterial_spot",
+      "severity": null,
+      "true_class_probability": 0.006971575785428286,
+      "true_index": 29,
+      "true_label": "Tomato___Early_blight"
+    },
+    {
+      "confidence": 0.9913068413734436,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/acfc653f-44e2-41f6-85cd-3595a6fd7455___RS_NLB 3840_180deg__71ec2b6a18e7.jpg",
+      "predicted_index": 7,
+      "predicted_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "severity": null,
+      "true_class_probability": 0.003277390729635954,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.9898607730865479,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/4c7b7f86-9816-403a-98bc-1123dba9478e___RS_HL 0612_newPixel25__3ae71f884582.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.00988417025655508,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9898471236228943,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/7e32ce27-bc89-4fca-9f49-c50de91210d1___FREC_C.Rust 4425_90deg__46c85d40e097.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.010019000619649887,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9893621802330017,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Apple_scab/6344cfa8-2c26-4498-b366-817d56285212___FREC_Scab 2964_270deg__de8f3d725938.jpg",
+      "predicted_index": 3,
+      "predicted_label": "Apple___healthy",
+      "severity": null,
+      "true_class_probability": 0.010387527756392956,
+      "true_index": 0,
+      "true_label": "Apple___Apple_scab"
+    },
+    {
+      "confidence": 0.9889712929725647,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/cc83c592-a6bd-46e8-8bd2-5bf03df02c73___Com.G_TgS_FL 0704__b61095b1bfe7.jpg",
+      "predicted_index": 33,
+      "predicted_label": "Tomato___Septoria_leaf_spot",
+      "severity": null,
+      "true_class_probability": 0.002304593799635768,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9885128736495972,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Spider_mites Two-spotted_spider_mite/3fe4c6c1-6c3b-45ec-83e7-24eb41e6a20c___Com.G_SpM_FL 8519_flipTB__9e25f0d3db48.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.0028494971338659525,
+      "true_index": 34,
+      "true_label": "Tomato___Spider_mites Two-spotted_spider_mite"
+    },
+    {
+      "confidence": 0.98592209815979,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Leaf_Mold/9667b27d-09e8-4776-97bf-e6088227d26d___Crnl_L.Mold 6670_180deg__2d75a474c5b0.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.010967271402478218,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9858145117759705,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/05fa9fcd-ce4c-4c47-aabf-6d794ada4e1c___Com.G_TgS_FL 9802_180deg__d6a04acdb6d3.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.009783652611076832,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9855294823646545,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/fa148283-75ee-4806-8282-63662a2e05c1___FREC_C.Rust 4416_90deg__eeb32fc27599.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.013892619870603085,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9848291277885437,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/2b2c841a-f3e8-4861-83d4-c00eaace0049___Com.G_TgS_FL 9897_180deg__026bc887ee13.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.012347554787993431,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9848291277885437,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/2b2c841a-f3e8-4861-83d4-c00eaace0049___Com.G_TgS_FL 9897_180deg__5cbc1fc31573.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.012347554787993431,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9848043918609619,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Leaf_Mold/e3f2056b-aa97-4369-8b56-90fd45f37d4d___Crnl_L.Mold 6555_180deg__1d72a0066015.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.013601346872746944,
+      "true_index": 32,
+      "true_label": "Tomato___Leaf_Mold"
+    },
+    {
+      "confidence": 0.9845830202102661,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/e4d49981-3d94-4a22-bba7-2be41b0fc65f___Com.G_TgS_FL 9880__30e1870cc7f8.jpg",
+      "predicted_index": 28,
+      "predicted_label": "Tomato___Bacterial_spot",
+      "severity": null,
+      "true_class_probability": 0.011985991150140762,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9845830202102661,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/e4d49981-3d94-4a22-bba7-2be41b0fc65f___Com.G_TgS_FL 9880__55ddd00984a3.jpg",
+      "predicted_index": 28,
+      "predicted_label": "Tomato___Bacterial_spot",
+      "severity": null,
+      "true_class_probability": 0.011985991150140762,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.982532262802124,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963_270deg__a158883d876f.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.017451494932174683,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9818283915519714,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/eb94b818-0cd7-4233-8315-1138c258eb88___FREC_C.Rust 0164_new30degFlipTB__812b8c96882d.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.018171535804867744,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9803560972213745,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/186c5f5d-a8d7-40bf-abe7-cebefa66808c___RS_GLSp 4355 copy 2__c0695b18f0a2.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.0035558801610022783,
+      "true_index": 7,
+      "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    },
+    {
+      "confidence": 0.9800499081611633,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Spider_mites Two-spotted_spider_mite/8c1aeb64-c6e2-4d36-a664-1c28411edfa1___Com.G_SpM_FL 9394__a0b4d0f82c0f.jpg",
+      "predicted_index": 35,
+      "predicted_label": "Tomato___Target_Spot",
+      "severity": null,
+      "true_class_probability": 0.006872563622891903,
+      "true_index": 34,
+      "true_label": "Tomato___Spider_mites Two-spotted_spider_mite"
+    },
+    {
+      "confidence": 0.9794642925262451,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/2cfdcad0-ed4d-496a-80dc-38852264f4cc___Com.G_TgS_FL 0893_180deg__c497d0c55a50.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.01800343208014965,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9793969988822937,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/4a8c230a-f9d0-40be-ae53-e5a4f2f66cd1___RS_HL 0370_newPixel25__34485f58b96f.jpg",
+      "predicted_index": 2,
+      "predicted_label": "Apple___Cedar_apple_rust",
+      "severity": null,
+      "true_class_probability": 0.017908575013279915,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9788221716880798,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Northern_Leaf_Blight/76ac9115-7016-46bb-93a2-cbc420792406___RS_NLB 0782_180deg__0e75d5e612d3.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.021108580753207207,
+      "true_index": 10,
+      "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+    },
+    {
+      "confidence": 0.9779831171035767,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/4a7b8d1e-ca1e-4b87-a7bc-0a43720f66dd___Com.G_TgS_FL 9929_newPixel25__5c735ecf2fef.jpg",
+      "predicted_index": 24,
+      "predicted_label": "Soybean___healthy",
+      "severity": null,
+      "true_class_probability": 0.0041013178415596485,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9779831171035767,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/4a7b8d1e-ca1e-4b87-a7bc-0a43720f66dd___Com.G_TgS_FL 9929_newPixel25__7c86e1dc9350.jpg",
+      "predicted_index": 24,
+      "predicted_label": "Soybean___healthy",
+      "severity": null,
+      "true_class_probability": 0.0041013178415596485,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9772025942802429,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/dc846417-563a-4e11-b4ba-b093db6af0b7___RS_GLSp 4430__9f0b68143beb.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.004463598597794771,
+      "true_index": 7,
+      "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    },
+    {
+      "confidence": 0.9756888747215271,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Grape___Esca_(Black_Measles)/d2d21ea0-7616-4f7a-9b35-1909d72de459___FAM_B.Msls 1878_flipLR__3bdf49e1a08e.jpg",
+      "predicted_index": 11,
+      "predicted_label": "Grape___Black_rot",
+      "severity": null,
+      "true_class_probability": 0.024285171180963516,
+      "true_index": 12,
+      "true_label": "Grape___Esca_(Black_Measles)"
+    },
+    {
+      "confidence": 0.9754756689071655,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Late_blight/cdeb7f9d-c0de-4fbd-95a5-fbaaa51460dd___RS_Late.B 5571__ad1730478ce3.jpg",
+      "predicted_index": 22,
+      "predicted_label": "Potato___Late_blight",
+      "severity": null,
+      "true_class_probability": 0.023098174482584,
+      "true_index": 31,
+      "true_label": "Tomato___Late_blight"
+    },
+    {
+      "confidence": 0.9747123122215271,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/da0e1f6d-8daa-4ca4-9776-08ce115d3d04___Com.G_TgS_FL 9680__f64c6c6f9721.jpg",
+      "predicted_index": 34,
+      "predicted_label": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "severity": null,
+      "true_class_probability": 0.022935934364795685,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9738674759864807,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/949d3f98-9992-4f2d-8384-a74d3e9a4ae8___FREC_C.Rust 0197_newPixel25__43df204b774b.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.008188043721020222,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9738674759864807,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/949d3f98-9992-4f2d-8384-a74d3e9a4ae8___FREC_C.Rust 0197_newPixel25__f3a18cfc1356.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.008188043721020222,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9729509353637695,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Pepper,_bell___Bacterial_spot/61ff52bd-c262-4198-8067-76d89a0468a9___NREC_B.Spot 9176__9836c41e3919.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.027042772620916367,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.972857654094696,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/fa148283-75ee-4806-8282-63662a2e05c1___FREC_C.Rust 4416_270deg__28c103115929.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.027101455256342888,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9697050452232361,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/eb94b818-0cd7-4233-8315-1138c258eb88___FREC_C.Rust 0164_270deg__133b397cc45c.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.030080895870923996,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9690463542938232,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot/a9e08234-c1be-4519-a3e3-dd8d9456fab0___RS_GLSp 7336__1c3612023ed6.jpg",
+      "predicted_index": 9,
+      "predicted_label": "Corn_(maize)___healthy",
+      "severity": null,
+      "true_class_probability": 0.019223060458898544,
+      "true_index": 7,
+      "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+    },
+    {
+      "confidence": 0.968904435634613,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Late_blight/cf2e943e-c8d7-43eb-a137-72f6b67b187a___RS_Late.B 7192__9fe4381a9da9.jpg",
+      "predicted_index": 22,
+      "predicted_label": "Potato___Late_blight",
+      "severity": null,
+      "true_class_probability": 0.021432943642139435,
+      "true_index": 31,
+      "true_label": "Tomato___Late_blight"
+    },
+    {
+      "confidence": 0.9676710963249207,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___healthy/00bce074-967b-4d50-967a-31fdaa35e688___RS_HL 0223_newPixel25__b07713ae5c43.jpg",
+      "predicted_index": 23,
+      "predicted_label": "Raspberry___healthy",
+      "severity": null,
+      "true_class_probability": 0.023187465965747833,
+      "true_index": 30,
+      "true_label": "Tomato___healthy"
+    },
+    {
+      "confidence": 0.9674224257469177,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Black_rot/2a4cbd85-e831-4ec4-8acf-49cea51eeb5f___JR_FrgE.S 2900_new30degFlipLR__5412c795da49.jpg",
+      "predicted_index": 26,
+      "predicted_label": "Strawberry___healthy",
+      "severity": null,
+      "true_class_probability": 0.03040604665875435,
+      "true_index": 1,
+      "true_label": "Apple___Black_rot"
+    },
+    {
+      "confidence": 0.9660923480987549,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/a6ff61c5-74e4-48a5-b3c4-f8a80d3a1eca___FREC_C.Rust 4327_90deg__d8abef8380f3.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.033529721200466156,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9650662541389465,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/953657b3-2482-4e49-b3d8-1d028be92a0b___Com.G_TgS_FL 9744__c7f3325f1efe.jpg",
+      "predicted_index": 28,
+      "predicted_label": "Tomato___Bacterial_spot",
+      "severity": null,
+      "true_class_probability": 0.015179351903498173,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    },
+    {
+      "confidence": 0.9642212390899658,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Septoria_leaf_spot/1f755e56-f38f-44ef-8076-d82c302c4539___JR_Sept.L.S 8407_flipTB__f6c7b70c2f3e.jpg",
+      "predicted_index": 29,
+      "predicted_label": "Tomato___Early_blight",
+      "severity": null,
+      "true_class_probability": 0.033473167568445206,
+      "true_index": 33,
+      "true_label": "Tomato___Septoria_leaf_spot"
+    },
+    {
+      "confidence": 0.9627487659454346,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Septoria_leaf_spot/0bcb24a9-bf45-4008-b9df-1c729f977b17___Matt.S_CG 7835__23c6622cfa31.jpg",
+      "predicted_index": 14,
+      "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "severity": null,
+      "true_class_probability": 0.025431720539927483,
+      "true_index": 33,
+      "true_label": "Tomato___Septoria_leaf_spot"
+    },
+    {
+      "confidence": 0.9601027965545654,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Pepper,_bell___healthy/1fdbead6-97f6-4712-8c5e-2a1285e1e777___JR_HL 8681_new30degFlipLR__7a972c5a2abe.jpg",
+      "predicted_index": 23,
+      "predicted_label": "Raspberry___healthy",
+      "severity": null,
+      "true_class_probability": 0.036874525249004364,
+      "true_index": 19,
+      "true_label": "Pepper,_bell___healthy"
+    },
+    {
+      "confidence": 0.9573900699615479,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Pepper,_bell___Bacterial_spot/4995d36f-321f-4f9e-82c8-9a0c78d1f266___NREC_B.Spot 9076_180deg__5aea129fbdda.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.039961911737918854,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9568397998809814,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Cedar_apple_rust/b83383d6-f476-412f-b8b8-6965a795ef7b___FREC_C.Rust 3541__929e7065ad99.jpg",
+      "predicted_index": 28,
+      "predicted_label": "Tomato___Bacterial_spot",
+      "severity": null,
+      "true_class_probability": 0.04277179390192032,
+      "true_index": 2,
+      "true_label": "Apple___Cedar_apple_rust"
+    },
+    {
+      "confidence": 0.9563746452331543,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Black_rot/ded93fa6-0c14-47ea-aa92-806a64db7816___JR_FrgE.S 2795_new30degFlipLR__3df182562bcc.jpg",
+      "predicted_index": 0,
+      "predicted_label": "Apple___Apple_scab",
+      "severity": null,
+      "true_class_probability": 0.034950289875268936,
+      "true_index": 1,
+      "true_label": "Apple___Black_rot"
+    },
+    {
+      "confidence": 0.9539542198181152,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Late_blight/46edfbcd-876e-4310-bba7-bae2b8fcc773___GHLB2 Leaf 9069__8737c9416869.jpg",
+      "predicted_index": 30,
+      "predicted_label": "Tomato___healthy",
+      "severity": null,
+      "true_class_probability": 0.04584949091076851,
+      "true_index": 31,
+      "true_label": "Tomato___Late_blight"
+    },
+    {
+      "confidence": 0.9523394703865051,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Cherry_(including_sour)___Powdery_mildew/085f167e-2fef-46e1-8518-ca4e555b59a3___FREC_Pwd.M 4488__b3c41b60b287.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.04726479947566986,
+      "true_index": 6,
+      "true_label": "Cherry_(including_sour)___Powdery_mildew"
+    },
+    {
+      "confidence": 0.9521338939666748,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/3b3450a9-d684-4b76-b788-c42c62bacc91___RS_HL 5433_newPixel25__8be6af6ca606.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.023586055263876915,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9513052701950073,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Pepper,_bell___Bacterial_spot/57d9d6f1-8f81-4b5b-8985-c82b136a6c4c___JR_B.Spot 8846__42c77aed99ff.jpg",
+      "predicted_index": 19,
+      "predicted_label": "Pepper,_bell___healthy",
+      "severity": null,
+      "true_class_probability": 0.04868859425187111,
+      "true_index": 18,
+      "true_label": "Pepper,_bell___Bacterial_spot"
+    },
+    {
+      "confidence": 0.9510646462440491,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Spider_mites Two-spotted_spider_mite/2bc44ebe-0c50-4e13-b174-c7af34098ed9___Com.G_SpM_FL 9399_flipTB__e8772e5193cc.jpg",
+      "predicted_index": 35,
+      "predicted_label": "Tomato___Target_Spot",
+      "severity": null,
+      "true_class_probability": 0.03224813565611839,
+      "true_index": 34,
+      "true_label": "Tomato___Spider_mites Two-spotted_spider_mite"
+    },
+    {
+      "confidence": 0.950435221195221,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Apple___Apple_scab/6e17c808-c071-4eae-befd-bf7e2ed0d9e1___FREC_Scab 3256__55d0894da395.jpg",
+      "predicted_index": 3,
+      "predicted_label": "Apple___healthy",
+      "severity": null,
+      "true_class_probability": 0.049558475613594055,
+      "true_index": 0,
+      "true_label": "Apple___Apple_scab"
+    },
+    {
+      "confidence": 0.949619710445404,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Potato___Late_blight/1b7342d7-5d89-4ee3-8b4f-587d79187511___RS_LB 4416__30c95fcebfae.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.05035101994872093,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.949619710445404,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Potato___Late_blight/1b7342d7-5d89-4ee3-8b4f-587d79187511___RS_LB 4416__34abb2c8dfec.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.05035101994872093,
+      "true_index": 22,
+      "true_label": "Potato___Late_blight"
+    },
+    {
+      "confidence": 0.9466475248336792,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Blueberry___healthy/1ed0011f-158c-46d2-ac02-c652b6bda8e2___RS_HL 2452_new30degFlipLR__85fa06f2a465.jpg",
+      "predicted_index": 21,
+      "predicted_label": "Potato___healthy",
+      "severity": null,
+      "true_class_probability": 0.04285775125026703,
+      "true_index": 4,
+      "true_label": "Blueberry___healthy"
+    },
+    {
+      "confidence": 0.9458554983139038,
+      "correct": false,
+      "corruption": null,
+      "filepath": "Tomato___Target_Spot/1c051bf2-9fb9-4d1f-b5c3-d813c0278aca___Com.G_TgS_FL 9683__e93649bcf76f.jpg",
+      "predicted_index": 34,
+      "predicted_label": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "severity": null,
+      "true_class_probability": 0.05071558430790901,
+      "true_index": 35,
+      "true_label": "Tomato___Target_Spot"
+    }
+  ],
+  "model_name": "resnet18",
+  "note": "This is a checkpoint-specific diagnostic. Curated backgrounds, acquisition patterns, and label ambiguity can influence the observed failures.",
+  "num_classes": 38,
+  "num_workers": 2,
+  "schema_version": 1,
+  "seed": 42,
+  "severity": null,
+  "split": "test",
+  "stored_example_count": 80,
+  "summary": {
+    "error_rate": 0.016127196144651464,
+    "highest_confidence_wrong_predictions": [
+      {
+        "confidence": 0.999994158744812,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Blueberry___healthy/ca4ea722-9bf0-4094-bf8b-e15091bab904___RS_HL 0620__d341c8c6a27e.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": null,
+        "true_class_probability": 4.326826399392303e-07,
+        "true_index": 4,
+        "true_label": "Blueberry___healthy"
+      },
+      {
+        "confidence": 0.9999898672103882,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Apple___Cedar_apple_rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963_90deg__04216762845a.jpg",
+        "predicted_index": 0,
+        "predicted_label": "Apple___Apple_scab",
+        "severity": null,
+        "true_class_probability": 1.0144037332793232e-05,
+        "true_index": 2,
+        "true_label": "Apple___Cedar_apple_rust"
+      },
+      {
+        "confidence": 0.9999898672103882,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Apple___Cedar_apple_rust/87ea6ae6-eaf6-468d-85cd-cded92ba526f___FREC_C.Rust 9963_90deg__859d01f5c3a2.jpg",
+        "predicted_index": 0,
+        "predicted_label": "Apple___Apple_scab",
+        "severity": null,
+        "true_class_probability": 1.0144037332793232e-05,
+        "true_index": 2,
+        "true_label": "Apple___Cedar_apple_rust"
+      },
+      {
+        "confidence": 0.9999746084213257,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Apple___Cedar_apple_rust/6fa42fea-4fcd-4cfe-bfbd-c03ee2d7bb3f___FREC_C.Rust 0163_new30degFlipTB__a75fce312dff.jpg",
+        "predicted_index": 0,
+        "predicted_label": "Apple___Apple_scab",
+        "severity": null,
+        "true_class_probability": 2.540685272833798e-05,
+        "true_index": 2,
+        "true_label": "Apple___Cedar_apple_rust"
+      },
+      {
+        "confidence": 0.9996883869171143,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Tomato___Early_blight/0f111718-a749-42cf-9495-412f4b51acf0___RS_Erly.B 7482__62d64dc01526.jpg",
+        "predicted_index": 28,
+        "predicted_label": "Tomato___Bacterial_spot",
+        "severity": null,
+        "true_class_probability": 4.5035038056084886e-05,
+        "true_index": 29,
+        "true_label": "Tomato___Early_blight"
+      },
+      {
+        "confidence": 0.9992355108261108,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Potato___Late_blight/e9cc84b7-fc38-4e65-a129-c7a63df76780___RS_LB 2705__901e6edc6098.jpg",
+        "predicted_index": 21,
+        "predicted_label": "Potato___healthy",
+        "severity": null,
+        "true_class_probability": 0.0007644150173291564,
+        "true_index": 22,
+        "true_label": "Potato___Late_blight"
+      },
+      {
+        "confidence": 0.9991129040718079,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Strawberry___healthy/2fbe071f-efd0-4a93-97b5-38160dafa0c5___RS_HL 2146_90deg__190c9bd419aa.jpg",
+        "predicted_index": 23,
+        "predicted_label": "Raspberry___healthy",
+        "severity": null,
+        "true_class_probability": 0.0008869453449733555,
+        "true_index": 26,
+        "true_label": "Strawberry___healthy"
+      },
+      {
+        "confidence": 0.9991090893745422,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Orange___Haunglongbing_(Citrus_greening)/26454175-626b-436b-b59c-396872381437___UF.Citrus_HLB_Lab 0691__17a165d3d516.jpg",
+        "predicted_index": 9,
+        "predicted_label": "Corn_(maize)___healthy",
+        "severity": null,
+        "true_class_probability": 0.0006492735701613128,
+        "true_index": 15,
+        "true_label": "Orange___Haunglongbing_(Citrus_greening)"
+      },
+      {
+        "confidence": 0.998895525932312,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Corn_(maize)___Northern_Leaf_Blight/c4eb96b2-1345-46d0-a796-161042da21df___RS_NLB 0824 copy_180deg__71ec1b247ee2.jpg",
+        "predicted_index": 9,
+        "predicted_label": "Corn_(maize)___healthy",
+        "severity": null,
+        "true_class_probability": 0.0009226619731634855,
+        "true_index": 10,
+        "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+      },
+      {
+        "confidence": 0.9985255599021912,
+        "correct": false,
+        "corruption": null,
+        "filepath": "Grape___Black_rot/a5b36885-7c84-4913-a69e-d0e881f18f8b___FAM_B.Rot 0621_flipLR__4ddcf63adaee.jpg",
+        "predicted_index": 14,
+        "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "severity": null,
+        "true_class_probability": 0.0014725428773090243,
+        "true_index": 11,
+        "true_label": "Grape___Black_rot"
+      }
+    ],
+    "lowest_confidence_correct_predictions": [
+      {
+        "confidence": 0.32181304693222046,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Cherry_(including_sour)___Powdery_mildew/61705ba4-f43e-48f6-afd2-d62fe6f3922e___FREC_Pwd.M 5139_flipLR__fc41fff4a2f4.jpg",
+        "predicted_index": 6,
+        "predicted_label": "Cherry_(including_sour)___Powdery_mildew",
+        "severity": null,
+        "true_class_probability": 0.32181304693222046,
+        "true_index": 6,
+        "true_label": "Cherry_(including_sour)___Powdery_mildew"
+      },
+      {
+        "confidence": 0.35660117864608765,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Peach___Bacterial_spot/dda063cf-1be6-4baf-825f-538fc3d6e606___Rut._Bact.S 3471__c037f1199f06.jpg",
+        "predicted_index": 16,
+        "predicted_label": "Peach___Bacterial_spot",
+        "severity": null,
+        "true_class_probability": 0.35660117864608765,
+        "true_index": 16,
+        "true_label": "Peach___Bacterial_spot"
+      },
+      {
+        "confidence": 0.38467440009117126,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Blueberry___healthy/0d8e77c4-1930-456c-b429-e8774653a8cd___RS_HL 2272_180deg__b6ccdcb623af.jpg",
+        "predicted_index": 4,
+        "predicted_label": "Blueberry___healthy",
+        "severity": null,
+        "true_class_probability": 0.38467440009117126,
+        "true_index": 4,
+        "true_label": "Blueberry___healthy"
+      },
+      {
+        "confidence": 0.4101492166519165,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Tomato___Late_blight/6dbfb834-5654-4526-8014-2b33ef976892___RS_Late.B 6172_flipLR__bc45c9a97669.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": null,
+        "true_class_probability": 0.4101492166519165,
+        "true_index": 31,
+        "true_label": "Tomato___Late_blight"
+      },
+      {
+        "confidence": 0.41696545481681824,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Tomato___Leaf_Mold/2d6f98ac-7545-4ea6-97f7-51374d16adc2___Crnl_L.Mold 7005__06ba2f48431f.jpg",
+        "predicted_index": 32,
+        "predicted_label": "Tomato___Leaf_Mold",
+        "severity": null,
+        "true_class_probability": 0.41696545481681824,
+        "true_index": 32,
+        "true_label": "Tomato___Leaf_Mold"
+      },
+      {
+        "confidence": 0.4335622191429138,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Tomato___Target_Spot/4ab417ba-7f9c-44ee-a7d1-1cd78fe68b58___Com.G_TgS_FL 0046_180deg__15962b18baa7.jpg",
+        "predicted_index": 35,
+        "predicted_label": "Tomato___Target_Spot",
+        "severity": null,
+        "true_class_probability": 0.4335622191429138,
+        "true_index": 35,
+        "true_label": "Tomato___Target_Spot"
+      },
+      {
+        "confidence": 0.45130547881126404,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Tomato___Late_blight/f37f0878-31f2-402b-81c6-dd1af6e15899___RS_Late.B 5222__371312514c0b.jpg",
+        "predicted_index": 31,
+        "predicted_label": "Tomato___Late_blight",
+        "severity": null,
+        "true_class_probability": 0.45130547881126404,
+        "true_index": 31,
+        "true_label": "Tomato___Late_blight"
+      },
+      {
+        "confidence": 0.45643699169158936,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Tomato___Septoria_leaf_spot/e94aaf1a-0c1b-4020-87f0-93c74f929f1c___JR_Sept.L.S 8496__b62a1f7e2ca0.jpg",
+        "predicted_index": 33,
+        "predicted_label": "Tomato___Septoria_leaf_spot",
+        "severity": null,
+        "true_class_probability": 0.45643699169158936,
+        "true_index": 33,
+        "true_label": "Tomato___Septoria_leaf_spot"
+      },
+      {
+        "confidence": 0.4597432017326355,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Pepper,_bell___Bacterial_spot/ef02f719-ca79-481f-9429-365fa1685a80___JR_B.Spot 9056_flipTB__7a0e40bbe5c6.jpg",
+        "predicted_index": 18,
+        "predicted_label": "Pepper,_bell___Bacterial_spot",
+        "severity": null,
+        "true_class_probability": 0.4597432017326355,
+        "true_index": 18,
+        "true_label": "Pepper,_bell___Bacterial_spot"
+      },
+      {
+        "confidence": 0.4597432017326355,
+        "correct": true,
+        "corruption": null,
+        "filepath": "Pepper,_bell___Bacterial_spot/ef02f719-ca79-481f-9429-365fa1685a80___JR_B.Spot 9056_flipTB__b90c4e43ff36.jpg",
+        "predicted_index": 18,
+        "predicted_label": "Pepper,_bell___Bacterial_spot",
+        "severity": null,
+        "true_class_probability": 0.4597432017326355,
+        "true_index": 18,
+        "true_label": "Pepper,_bell___Bacterial_spot"
+      }
+    ],
+    "most_common_confusions": [
+      {
+        "mistake_count": 21,
+        "predicted_label": "Tomato___Early_blight",
+        "true_label": "Tomato___Target_Spot"
+      },
+      {
+        "mistake_count": 20,
+        "predicted_label": "Corn_(maize)___Northern_Leaf_Blight",
+        "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+      },
+      {
+        "mistake_count": 19,
+        "predicted_label": "Apple___Apple_scab",
+        "true_label": "Apple___Cedar_apple_rust"
+      },
+      {
+        "mistake_count": 13,
+        "predicted_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+        "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+      },
+      {
+        "mistake_count": 12,
+        "predicted_label": "Potato___healthy",
+        "true_label": "Blueberry___healthy"
+      },
+      {
+        "mistake_count": 12,
+        "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "true_label": "Grape___Black_rot"
+      },
+      {
+        "mistake_count": 12,
+        "predicted_label": "Potato___Late_blight",
+        "true_label": "Tomato___Late_blight"
+      },
+      {
+        "mistake_count": 12,
+        "predicted_label": "Tomato___Target_Spot",
+        "true_label": "Tomato___Spider_mites Two-spotted_spider_mite"
+      },
+      {
+        "mistake_count": 11,
+        "predicted_label": "Tomato___Early_blight",
+        "true_label": "Tomato___Septoria_leaf_spot"
+      },
+      {
+        "mistake_count": 10,
+        "predicted_label": "Corn_(maize)___healthy",
+        "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+      }
+    ],
+    "per_class_error_rates": [
+      {
+        "class_index": 35,
+        "class_name": "Tomato___Target_Spot",
+        "error_rate": 0.07445255474452554,
+        "mistakes": 51,
+        "total": 685
+      },
+      {
+        "class_index": 7,
+        "class_name": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+        "error_rate": 0.06666666666666667,
+        "mistakes": 41,
+        "total": 615
+      },
+      {
+        "class_index": 4,
+        "class_name": "Blueberry___healthy",
+        "error_rate": 0.048458149779735685,
+        "mistakes": 33,
+        "total": 681
+      },
+      {
+        "class_index": 31,
+        "class_name": "Tomato___Late_blight",
+        "error_rate": 0.040345821325648415,
+        "mistakes": 28,
+        "total": 694
+      },
+      {
+        "class_index": 2,
+        "class_name": "Apple___Cedar_apple_rust",
+        "error_rate": 0.03939393939393939,
+        "mistakes": 26,
+        "total": 660
+      },
+      {
+        "class_index": 10,
+        "class_name": "Corn_(maize)___Northern_Leaf_Blight",
+        "error_rate": 0.03776223776223776,
+        "mistakes": 27,
+        "total": 715
+      },
+      {
+        "class_index": 34,
+        "class_name": "Tomato___Spider_mites Two-spotted_spider_mite",
+        "error_rate": 0.036753445635528334,
+        "mistakes": 24,
+        "total": 653
+      },
+      {
+        "class_index": 29,
+        "class_name": "Tomato___Early_blight",
+        "error_rate": 0.029166666666666667,
+        "mistakes": 21,
+        "total": 720
+      },
+      {
+        "class_index": 33,
+        "class_name": "Tomato___Septoria_leaf_spot",
+        "error_rate": 0.0290519877675841,
+        "mistakes": 19,
+        "total": 654
+      },
+      {
+        "class_index": 11,
+        "class_name": "Grape___Black_rot",
+        "error_rate": 0.02401129943502825,
+        "mistakes": 17,
+        "total": 708
+      },
+      {
+        "class_index": 22,
+        "class_name": "Potato___Late_blight",
+        "error_rate": 0.02200825309491059,
+        "mistakes": 16,
+        "total": 727
+      },
+      {
+        "class_index": 1,
+        "class_name": "Apple___Black_rot",
+        "error_rate": 0.016107382550335572,
+        "mistakes": 12,
+        "total": 745
+      },
+      {
+        "class_index": 36,
+        "class_name": "Tomato___Tomato_mosaic_virus",
+        "error_rate": 0.014903129657228018,
+        "mistakes": 10,
+        "total": 671
+      },
+      {
+        "class_index": 32,
+        "class_name": "Tomato___Leaf_Mold",
+        "error_rate": 0.01276595744680851,
+        "mistakes": 9,
+        "total": 705
+      },
+      {
+        "class_index": 15,
+        "class_name": "Orange___Haunglongbing_(Citrus_greening)",
+        "error_rate": 0.011936339522546418,
+        "mistakes": 9,
+        "total": 754
+      },
+      {
+        "class_index": 26,
+        "class_name": "Strawberry___healthy",
+        "error_rate": 0.011695906432748537,
+        "mistakes": 8,
+        "total": 684
+      },
+      {
+        "class_index": 20,
+        "class_name": "Potato___Early_blight",
+        "error_rate": 0.011004126547455296,
+        "mistakes": 8,
+        "total": 727
+      },
+      {
+        "class_index": 19,
+        "class_name": "Pepper,_bell___healthy",
+        "error_rate": 0.010738255033557046,
+        "mistakes": 8,
+        "total": 745
+      },
+      {
+        "class_index": 30,
+        "class_name": "Tomato___healthy",
+        "error_rate": 0.009695290858725761,
+        "mistakes": 7,
+        "total": 722
+      },
+      {
+        "class_index": 17,
+        "class_name": "Peach___healthy",
+        "error_rate": 0.009259259259259259,
+        "mistakes": 6,
+        "total": 648
+      },
+      {
+        "class_index": 37,
+        "class_name": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+        "error_rate": 0.00816326530612245,
+        "mistakes": 6,
+        "total": 735
+      },
+      {
+        "class_index": 0,
+        "class_name": "Apple___Apple_scab",
+        "error_rate": 0.007936507936507936,
+        "mistakes": 6,
+        "total": 756
+      },
+      {
+        "class_index": 27,
+        "class_name": "Strawberry___Leaf_scorch",
+        "error_rate": 0.007518796992481203,
+        "mistakes": 5,
+        "total": 665
+      },
+      {
+        "class_index": 18,
+        "class_name": "Pepper,_bell___Bacterial_spot",
+        "error_rate": 0.00697350069735007,
+        "mistakes": 5,
+        "total": 717
+      },
+      {
+        "class_index": 12,
+        "class_name": "Grape___Esca_(Black_Measles)",
+        "error_rate": 0.006944444444444444,
+        "mistakes": 5,
+        "total": 720
+      },
+      {
+        "class_index": 8,
+        "class_name": "Corn_(maize)___Common_rust_",
+        "error_rate": 0.005594405594405594,
+        "mistakes": 4,
+        "total": 715
+      },
+      {
+        "class_index": 28,
+        "class_name": "Tomato___Bacterial_spot",
+        "error_rate": 0.004702194357366771,
+        "mistakes": 3,
+        "total": 638
+      },
+      {
+        "class_index": 21,
+        "class_name": "Potato___healthy",
+        "error_rate": 0.0043859649122807015,
+        "mistakes": 3,
+        "total": 684
+      },
+      {
+        "class_index": 3,
+        "class_name": "Apple___healthy",
+        "error_rate": 0.00398406374501992,
+        "mistakes": 3,
+        "total": 753
+      },
+      {
+        "class_index": 5,
+        "class_name": "Cherry_(including_sour)___healthy",
+        "error_rate": 0.0029239766081871343,
+        "mistakes": 2,
+        "total": 684
+      },
+      {
+        "class_index": 6,
+        "class_name": "Cherry_(including_sour)___Powdery_mildew",
+        "error_rate": 0.001584786053882726,
+        "mistakes": 1,
+        "total": 631
+      },
+      {
+        "class_index": 16,
+        "class_name": "Peach___Bacterial_spot",
+        "error_rate": 0.001451378809869376,
+        "mistakes": 1,
+        "total": 689
+      },
+      {
+        "class_index": 24,
+        "class_name": "Soybean___healthy",
+        "error_rate": 0.0013192612137203166,
+        "mistakes": 1,
+        "total": 758
+      },
+      {
+        "class_index": 9,
+        "class_name": "Corn_(maize)___healthy",
+        "error_rate": 0.0,
+        "mistakes": 0,
+        "total": 697
+      },
+      {
+        "class_index": 13,
+        "class_name": "Grape___healthy",
+        "error_rate": 0.0,
+        "mistakes": 0,
+        "total": 634
+      },
+      {
+        "class_index": 14,
+        "class_name": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+        "error_rate": 0.0,
+        "mistakes": 0,
+        "total": 645
+      },
+      {
+        "class_index": 23,
+        "class_name": "Raspberry___healthy",
+        "error_rate": 0.0,
+        "mistakes": 0,
+        "total": 668
+      },
+      {
+        "class_index": 25,
+        "class_name": "Squash___Powdery_mildew",
+        "error_rate": 0.0,
+        "mistakes": 0,
+        "total": 651
+      }
+    ],
+    "top_predicted_labels_in_mistakes": [
+      {
+        "mistake_count": 79,
+        "predicted_label": "Tomato___Early_blight"
+      },
+      {
+        "mistake_count": 29,
+        "predicted_label": "Potato___healthy"
+      },
+      {
+        "mistake_count": 29,
+        "predicted_label": "Corn_(maize)___healthy"
+      },
+      {
+        "mistake_count": 28,
+        "predicted_label": "Pepper,_bell___healthy"
+      },
+      {
+        "mistake_count": 25,
+        "predicted_label": "Apple___Apple_scab"
+      },
+      {
+        "mistake_count": 24,
+        "predicted_label": "Tomato___Bacterial_spot"
+      },
+      {
+        "mistake_count": 20,
+        "predicted_label": "Corn_(maize)___Northern_Leaf_Blight"
+      },
+      {
+        "mistake_count": 19,
+        "predicted_label": "Raspberry___healthy"
+      },
+      {
+        "mistake_count": 19,
+        "predicted_label": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)"
+      },
+      {
+        "mistake_count": 16,
+        "predicted_label": "Tomato___Late_blight"
+      }
+    ],
+    "top_true_labels_by_mistake_count": [
+      {
+        "mistake_count": 51,
+        "true_label": "Tomato___Target_Spot"
+      },
+      {
+        "mistake_count": 41,
+        "true_label": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot"
+      },
+      {
+        "mistake_count": 33,
+        "true_label": "Blueberry___healthy"
+      },
+      {
+        "mistake_count": 28,
+        "true_label": "Tomato___Late_blight"
+      },
+      {
+        "mistake_count": 27,
+        "true_label": "Corn_(maize)___Northern_Leaf_Blight"
+      },
+      {
+        "mistake_count": 26,
+        "true_label": "Apple___Cedar_apple_rust"
+      },
+      {
+        "mistake_count": 24,
+        "true_label": "Tomato___Spider_mites Two-spotted_spider_mite"
+      },
+      {
+        "mistake_count": 21,
+        "true_label": "Tomato___Early_blight"
+      },
+      {
+        "mistake_count": 19,
+        "true_label": "Tomato___Septoria_leaf_spot"
+      },
+      {
+        "mistake_count": 17,
+        "true_label": "Grape___Black_rot"
+      }
+    ],
+    "total_images": 26353,
+    "total_mistakes": 425
+  }
+}
